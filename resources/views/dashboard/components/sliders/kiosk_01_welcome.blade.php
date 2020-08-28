@@ -1,5 +1,5 @@
 
-<div class="carousel-item active" data-interval="10000" id="kiosk_01_welcome">
+<div class="carousel-item active" data-interval="1000" id="kiosk_01_welcome">
   <div class="d-flex align-items-center justify-content-center">
 
       <div class="card text-center min-vh-100 min-vw-100" >

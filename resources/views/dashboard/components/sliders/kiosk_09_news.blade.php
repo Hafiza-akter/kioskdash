@@ -1,4 +1,4 @@
-<div class="carousel-item" data-interval="4000">
+<div class="carousel-item" data-interval="1000">
     <div class="d-flex align-items-center justify-content-center min-vh-100">
         <div class="card text-center min-vh-100 min-vw-100" >
          <!--  <div class="card-header" style="height:5vh">
@@ -15,9 +15,9 @@
               </div>
           </div>
 
-            <div class="sl-foo">
-              <marquee direction="left">Local news. Local news. Local news. </marquee>
-            </div>
+          <div class="sl-foo">
+            <marquee direction="left">Local news. Local news. Local news. </marquee>
+          </div>
           @include('dashboard.components.sliders.common.slider_footer')
 
         </div>
