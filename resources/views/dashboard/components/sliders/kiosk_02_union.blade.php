@@ -1,4 +1,4 @@
-<div class="carousel-item" data-interval="90000" id="kiosk_02_union">
+<div class="carousel-item" data-interval="40000" id="kiosk_02_union">
   <div class="d-flex align-items-center justify-content-center">
 
       <div class="card text-center min-vh-100 min-vw-100" >

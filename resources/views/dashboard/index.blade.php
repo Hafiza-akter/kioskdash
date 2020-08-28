@@ -170,17 +170,10 @@ var shpfile = new L.Shapefile('{{ asset("shapefile/administrative_boundary_of_ba
     
     shpfile.once("data:loaded", function() {
       console.log("finished loaded shapefile");
+      mymap.invalidateSize();
     });
-    // mymap.invalidateSize();
-    // $(document).ready(function () {
-    // document.getElementById('mapid').style.display = 'block';
-    // mymap.invalidateSize();
+    // 
 
-    mymap.invalidateSize();
-
-
-
-// });
 // document.getElementById("submit").onclick = function(e){
 //   var files = document.getElementById('file').files;
 //   if (files.length == 0) {
