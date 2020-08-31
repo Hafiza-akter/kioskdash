@@ -50,7 +50,7 @@
         <div class="info">
           <a href="#" class="d-block">
           <?php 
-          if(Session()->get('is_admin')==1){ ?>
+          if(Session()->get('is_admin') != 0){ ?>
             Admin
             <?php }else{ ?>
               {{$user->username}} 
@@ -75,7 +75,7 @@
               </p>
             </a>
           </li>
-          <?php if(Session()->get('is_admin')==1) {?>
+          <?php if(Session()->get('is_admin') != 0) {?>
         
           <li class="nav-item has-treeview">
             <a href="{{route('userlist')}}" class="nav-link">
