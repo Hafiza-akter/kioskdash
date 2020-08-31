@@ -94,8 +94,8 @@ video {
 <body>
 
 
-<div class="container-fluid px-0"> <!-- data-interval="true" -->
-    <div id="carouselExampleControls" class="carousel slide"  data-pause="hover"  data-ride="carousel">
+<div class="container-fluid px-0"> <!-- data-interval="true" data-pause="hover"-->
+    <div id="carouselExampleControls" class="carousel slide"    data-ride="carousel">
     {{-- <div id="carouselExampleControls" class="carousel slide"  data-interval="false"  data-ride="carousel"> --}}
         <div class="carousel-inner bg-info" role="listbox">
           @include('dashboard.components.sliders.kiosk_01_welcome')
@@ -170,17 +170,10 @@ var shpfile = new L.Shapefile('{{ asset("shapefile/administrative_boundary_of_ba
     
     shpfile.once("data:loaded", function() {
       console.log("finished loaded shapefile");
+      mymap.invalidateSize();
     });
-    // mymap.invalidateSize();
-    // $(document).ready(function () {
-    // document.getElementById('mapid').style.display = 'block';
-    // mymap.invalidateSize();
+    // 
 
-    mymap.invalidateSize();
-
-
-
-// });
 // document.getElementById("submit").onclick = function(e){
 //   var files = document.getElementById('file').files;
 //   if (files.length == 0) {

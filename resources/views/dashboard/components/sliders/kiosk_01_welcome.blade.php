@@ -1,5 +1,5 @@
 
-<div class="carousel-item active" data-interval="90000" id="kiosk_01_welcome">
+<div class="carousel-item active" data-interval="3000" id="kiosk_01_welcome">
   <div class="d-flex align-items-center justify-content-center">
 
       <div class="card text-center min-vh-100 min-vw-100" >
@@ -11,7 +11,7 @@
                  </video>
               </div>
             </div>
-            
+
         </div>
           @include('dashboard.components.sliders.common.slider_footer')
       </div>
