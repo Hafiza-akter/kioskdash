@@ -60,6 +60,11 @@ class UserController extends Controller
             // 'ffwc_sations' => 'required',
             // 'zoom_level' => 'required',
             'password' => 'required',
+            'user_loc_level' => 'required_if:role_id,2',
+            'district' => 'required_if:user_loc_level,district,upazila,union',
+            'upazila' => 'required_if:user_loc_level,upazila,union',
+            'union' => 'required_if:user_loc_level,union',
+
 
         ]);
         $user = new User();
@@ -139,16 +144,15 @@ class UserController extends Controller
         else{
             $slide_num = 0;
         }
-        // dd($slide_num);
-        // dd((array)$userStations);
         $user = User::Where('id',$id)->first();
         $upazilas = $unions = null;
-        $upazilas = Location::select('upazila_name', 'id')->Where('district_name',$user->getUserLocation->district_name)->get();
-        $unions = Location::select('union_name', 'id')
-                                ->Where('district_name',$user->getUserLocation->district_name)
-                                ->Where('upazila_name',$user->getUserLocation->upazila_name)
-                                ->get();
-
+        if($user->getUserRole->name == 'local'){
+            $upazilas = Location::select('upazila_name', 'id')->Where('district_name',$user->getUserLocation->district_name)->get();
+            $unions = Location::select('union_name', 'id')
+                                    ->Where('district_name',$user->getUserLocation->district_name)
+                                    ->Where('upazila_name',$user->getUserLocation->upazila_name)
+                                    ->get();
+        }
         return view('admin/user/edit', compact('user','roles','districts','upazilas','unions','ffwcStations','userStations','slideDetails','slide_num'));
     }
 
@@ -161,18 +165,23 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
+        // dd($request);
        
         $id = $request->input('id');
         $user =  User::where('id',$id)->first();
          // dd($request);
          $validateData = $request->validate([
             
-            'role_id' => 'required',
+            // 'role_id' => 'required',
             // 'location_id' => 'required',
             'email' => 'required|email|unique:user,username,'.$user->id,
 
             // 'ffwc_sations' => 'required',
             // 'zoom_level' => 'required',
+            'user_loc_level' => 'required_if:user_role,2',
+            'district' => 'required_if:user_loc_level,district,upazila,union',
+            'upazila' => 'required_if:user_loc_level,upazila,union',
+            'union' => 'required_if:user_loc_level,union',
         ]);
         $user->username = $request->input('email');
         $password = $request->input('password');
@@ -187,7 +196,7 @@ class UserController extends Controller
         elseif($user->user_loc_level == 'union'){
             $user->location_id = $request->input('union');
         }
-        $user->role_id = $request->input('role_id');
+        $user->role_id = $request->input('user_role');
         // $user->location_id = $request->input('district');
         $user->zoom_level = $request->input('zoom_level');
         $user->save();

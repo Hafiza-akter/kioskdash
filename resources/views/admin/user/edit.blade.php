@@ -27,6 +27,7 @@
               <form class="form-horizontal" method="post" action="{{route('userupdate')}}">
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{$user->id}}">
+                <input type="hidden" name="user_role" value="{{$user->role_id}}">
                 <div class="card-body">
                   <div class="form-group required row">
                     <label class="col-sm-2 col-form-label">Email</label>
@@ -44,14 +45,15 @@
                   <div class="form-group required row">
                     <label class="col-sm-2 col-form-label">Role</label>
                       <div class="col-sm-10">
-                          <select class="form-control" required name="role_id" id="role_id" required>
-                          <option value="">--select--</option>
+                          <select class="form-control" required name="role_id" id="role_id" required >
+                          <option value="" disabled>--select--</option>
                           @foreach($roles as $role)
-                          <option value="{{$role->id}}" {{($user->role_id == $role->id) ? 'selected' : ''}}>{{$role->name}}</option>
+                          <option value="{{$role->id}}" {{($user->role_id == $role->id) ? 'selected' : ''}} disabled>{{$role->name}}</option>
                           @endforeach
                           </select>                    
                       </div>
                   </div>
+                  @if($user->getUserRole->name == 'local')
                   <span id="locuserfield">
                     <?php if($user->user_loc_level == 'district' || $user->user_loc_level == 'upazila' || $user->user_loc_level == 'union'){ ?>
                       <div class="form-group  row">
@@ -157,6 +159,7 @@
                     </div>
                   </div>
                  </span>
+                 @endif
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
