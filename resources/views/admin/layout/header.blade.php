@@ -100,13 +100,28 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="{{route('slidelist')}}" class="nav-link">
-            <i class="nav-icon fas fa-list"></i>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
               <p>
-              Slide
+              Slide Configuration
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('slidelist')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Slide Duration</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('floodsummary')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Flood Summary</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <?php } ?>
           

@@ -33,6 +33,8 @@ Route::prefix('admin')->group(function(){
             Route::prefix('slide')->group(function(){
                 Route::get('/', 'Admin\UserController@slideList')->name('slidelist');
                 Route::post('/duration','Admin\UserController@slideDuration')->name('durationstore');
+                Route::get('/flood/summary', 'Admin\UserController@floodSummary')->name('floodsummary');
+                Route::post('/flood/summary', 'Admin\UserController@floodSummaryStore')->name('floodsummary.store');
             });
         });
     });

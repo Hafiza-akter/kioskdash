@@ -47,3 +47,9 @@
 .duration{
   width: 19%;
 }
+.note-btn-group.btn-group.note-insert {
+  display: none !important;
+}
+.btn-codeview {
+  display: none !important;
+}

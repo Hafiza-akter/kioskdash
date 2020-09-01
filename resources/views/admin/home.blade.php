@@ -60,52 +60,9 @@
             </div>
           </div>
         </form>
-      <?php  }elseif(Session()->get('is_admin') == 1){?>
-        
-        <form role="form" class="form-horizontal" method="post" action="#" enctype="multipart/form-data">
-          @if ($errors->any())
-          <div class="alert alert-danger">
-            <ul>
-              @foreach ($errors->all() as $error)`
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-          @endif
-          {{ csrf_field() }}
-          <input type="hidden" name="id" value="{{$user->id}}" id="userid">
-
-          <div class="card card-outline card-info">
-            <div class="card-header">
-              <h3 class="card-title">
-                 Custom Message
-              </h3>
-
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body pad">
-              <div class="mb-3">
-                <label class="col-sm-12 col-form-label">Message</label>
-                <textarea placeholder="Place some text here" class="customEditor" name="custom_message" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{($user->user_slide_description)? $user->user_slide_description : ''}}</textarea>
-              </div>
-              
-              <div class="form-group pt-5">
-                <button type="submit" class="btn-primary btn">Submit <i class="fas fa-check"></i></button>
-              </div>
-              <p class="text-sm mb-0">
-                <a href="#">
-                  Feedback or custom message.</a>
-              </p>
-
-            </div>
-          </div>
-        </form>
-
-
-
-      <?php }
+      <?php  }
       else{
-        echo '<h4>Super Admin Dashboard</h4>';
+        echo '<h4>Admin Dashboard</h4>';
       }
       ?>
     </div>

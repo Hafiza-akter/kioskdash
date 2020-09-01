@@ -22,7 +22,7 @@
                     <tr>
                         <th style="width: 10px">#</th>
                         <th>Slide Name</th>
-                        <th>Duration</th>
+                        <th>Duration/<sub>seconds</sub></th>
                     </tr>
                 </thead>
                 <tbody>
