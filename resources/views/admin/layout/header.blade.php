@@ -100,6 +100,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="{{route('slidelist')}}" class="nav-link">
+            <i class="nav-icon fas fa-list"></i>
+              <p>
+              Slide
+              </p>
+            </a>
+          </li>
           <?php } ?>
           
     

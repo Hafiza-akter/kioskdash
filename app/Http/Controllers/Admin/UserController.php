@@ -245,4 +245,9 @@ class UserController extends Controller
     {
         //
     }
+    public function slideList()
+    {
+        $slideList = SlideDetail::all();
+        return view('admin/slide/list');
+    }
 }

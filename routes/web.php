@@ -30,6 +30,13 @@ Route::prefix('admin')->group(function(){
                 Route::get('/edit/{id}','Admin\UserController@edit')->name('useredit');
                 Route::post('/update','Admin\UserController@update')->name('userupdate');
             });
+            Route::prefix('slide')->group(function(){
+                Route::get('/', 'Admin\UserController@slideList')->name('slidelist');
+                // Route::get('/create','Admin\UserController@create')->name('useradd');
+                // Route::post('/store','Admin\UserController@store')->name('userstore');
+                // Route::get('/edit/{id}','Admin\UserController@edit')->name('useredit');
+                // Route::post('/update','Admin\UserController@update')->name('userupdate');
+            });
         });
     });
 });
