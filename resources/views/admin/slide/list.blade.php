@@ -44,9 +44,7 @@
             <button type="submit" class="btn btn-info">Submit</button>
         </div>
     </form>
-    <div class="card-footer">
-        <div class="float-right">{{ $slideList->links() }}</div>
-    </div>
+   
 
 </div><!-- /.container-fluid -->
 @endsection

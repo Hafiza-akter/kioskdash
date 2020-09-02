@@ -89,9 +89,9 @@ class LoginController extends Controller
             }
             $file = $request->file('user_slide_image');
             $filename = rand(1,9000);
-            $file->move(public_path().'/images/',$filename.'_slideimg'.'.'.$file->getClientOriginalExtension());
-            $path = $filename.'_slideimg'.'.'.$file->getClientOriginalExtension();
-            $imgfullPath = 'images/'.$path; 
+            $file->move(public_path().'/images/',$filename.'_feedbackimg'.'.'.$file->getClientOriginalExtension());
+            $path = $filename.'_feedbackimg'.'.'.$file->getClientOriginalExtension();
+            $imgfullPath = $path; 
             $user->user_slide_image = $imgfullPath;
         }
         $user->save();

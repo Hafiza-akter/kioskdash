@@ -114,7 +114,7 @@ class UserController extends Controller
         $user = User::Where('id', $id)->first();
         $upazilas = $unions = null;
         if ($user->getUserRole->name == 'local') {
-            $upazilas = Location::select('upazila_name', 'id')->Where('district_name', $user->getUserLocation->district_name)->get();
+            $upazilas = Location::select('upazila_name', 'id')->Where('district_name', $user->getUserLocation->district_name)->groupBy('upazila_name')->get();
             $unions = Location::select('union_name', 'id')
                 ->Where('district_name', $user->getUserLocation->district_name)
                 ->Where('upazila_name', $user->getUserLocation->upazila_name)
@@ -192,35 +192,4 @@ class UserController extends Controller
         return redirect()->route('userlist')->with('message', 'User Updated Successfully!');
     }
 
-    public function slideList()
-    {
-        $slideList = SlideDetail::orderBy('id', 'ASC')->paginate(7);
-        // dd($slideList);
-        return view('admin/slide/list', compact('slideList'));
-    }
-
-    public function slideDuration(Request $request)
-    {
-        $slideCount = SlideDetail::all()->count();
-        for ($i = 1; $i <= $slideCount; $i++) {
-            $slideDetails = SlideDetail::where('id', $i)->first();
-            $field_name = 'duration_' . $i;
-            $duration_time = $request->input($field_name);
-            $slideDetails->duration = $duration_time;
-            $slideDetails->save();
-        }
-        return redirect()->route('slidelist')->with('message', 'Slide Duration Time Updated Successfully!');
-    }
-    public function floodSummary(){
-        $slideDetails = SlideDetail::where('slide_name','Flood Summary')->first();
-        return view('admin/slide/floodsummary',compact('slideDetails'));
-    }
-    public function floodSummaryStore(Request $request){
-        $floodSummary = $request->input('flood_summary');
-        $slideDetails = SlideDetail::where('slide_name','Flood Summary')->first();
-        $slideDetails->description = $floodSummary;
-        $slideDetails->save();
-        return redirect()->route('floodsummary')->with('message', 'Flood Summary Updated Successfully!');
-
-    }
 }

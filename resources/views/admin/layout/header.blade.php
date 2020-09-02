@@ -112,7 +112,7 @@
               <li class="nav-item">
                 <a href="{{route('slidelist')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Slide Duration</p>
+                  <p>Duration Setting</p>
                 </a>
               </li>
               <li class="nav-item">

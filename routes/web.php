@@ -31,10 +31,10 @@ Route::prefix('admin')->group(function(){
                 Route::post('/update','Admin\UserController@update')->name('userupdate');
             });
             Route::prefix('slide')->group(function(){
-                Route::get('/', 'Admin\UserController@slideList')->name('slidelist');
-                Route::post('/duration','Admin\UserController@slideDuration')->name('durationstore');
-                Route::get('/flood/summary', 'Admin\UserController@floodSummary')->name('floodsummary');
-                Route::post('/flood/summary', 'Admin\UserController@floodSummaryStore')->name('floodsummary.store');
+                Route::get('/', 'Admin\SettingController@slideList')->name('slidelist');
+                Route::post('/duration','Admin\SettingController@slideDuration')->name('durationstore');
+                Route::get('/flood/summary', 'Admin\SettingController@floodSummary')->name('floodsummary');
+                Route::post('/flood/summary', 'Admin\SettingController@floodSummaryStore')->name('floodsummary.store');
             });
         });
     });

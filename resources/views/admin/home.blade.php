@@ -43,7 +43,7 @@
                   <label class="col-sm-12 col-form-label">Image</label>
                   <?php if ($user->user_slide_image != '') { ?>
 
-                    <img src="{{asset('').$user->user_slide_image}}" id="imgthumb" style="{{($user->user_slide_image)? '':'display:none'}}; width:200px; height:auto" />
+                    <img src="{{asset('images').'/'.$user->user_slide_image}}" id="imgthumb" style="{{($user->user_slide_image)? '':'display:none'}}; width:200px; height:auto" />
                   <?php } ?>
                   <br> <a class="btn bg-danger btn-xs btn-danger btn-link" id="oldremove" style="{{($user->user_slide_image)? '':'display:none'}}">Remove</a>
                   <input type="file" name="user_slide_image" id="imginput" style="{{($user->user_slide_image)? 'display:none':''}}" class="form-control">

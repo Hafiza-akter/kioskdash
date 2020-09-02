@@ -12,12 +12,8 @@ class AjaxController extends Controller
 
      public function getUpazila(Request $request){
         $disrict = $request->input('district');
-        $upazilas = Location::select('id','district_name','upazila_name')->where('district_name',$disrict)->get();
+        $upazilas = Location::select('id','district_name','upazila_name')->where('district_name',$disrict)->groupBy('upazila_name')->get();
 
-        $response = array(
-            'status' => 'success',
-            'location' => $disrict,
-        );
         return response()->json($upazilas); 
     }
      public function getUnion(Request $request){
@@ -28,10 +24,6 @@ class AjaxController extends Controller
                             ->where('upazila_name',$upazila)
                             ->get();
 
-        $response = array(
-            'status' => 'success',
-            'location' => $disrict,
-        );
         return response()->json($unions); 
     }
 
@@ -59,7 +51,7 @@ class AjaxController extends Controller
         $userId = $request->input('userid');
         // dd($userId);
         $user = User::Where('id',$userId)->first();
-        $oldImage = $user->user_slide_image;
+        $oldImage = 'images/'.$user->user_slide_image;
         unlink($oldImage);
         $user->user_slide_image = null;
         $user->save();
