@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class FfwcStation extends Model
 {
-    protected $table = 'ffwc_sations';
+    protected $table = 'ffwc_stations';
 }
