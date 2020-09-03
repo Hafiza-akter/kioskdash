@@ -22,7 +22,7 @@ class SettingController extends Controller
     {
         $slideList = SlideDetail::orderBy('id', 'ASC')->get();
         // dd($slideList);
-        $is_active = 'slide';
+        $is_active = 'slideList';
         return view('admin/slide/list', compact('is_active','slideList'));
     }
 
@@ -41,7 +41,7 @@ class SettingController extends Controller
     public function floodSummary()
     {
         $slideDetails = SlideDetail::where('slide_name', 'Flood Summary')->first();
-        $is_active = 'slide';
+        $is_active = 'floodSummary';
         return view('admin/slide/floodsummary', compact('is_active','slideDetails'));
     }
     public function floodSummaryStore(Request $request)
@@ -55,14 +55,14 @@ class SettingController extends Controller
     public function slideImgList()
     {
         $slideImageList = SlideFilePath::orderBy('id', 'DESC')->paginate(5);
-        $is_active = 'slide';
+        $is_active = 'slideImageList';
         return view('admin/slide/image/list', compact('is_active','slideImageList'));
     }
     public function slideImgView()
     {
         $slideList = SlideDetail::orderBy('id', 'ASC')->get();
         $locations = Location::select('district_name', 'id')->groupBy('district_name')->get();
-        $is_active = 'slide';
+        $is_active = 'slideImageList';
         return view('admin/slide/image/create', compact('is_active','slideList', 'locations'));
     }
     public function slideImgStore(Request $request)
@@ -109,7 +109,7 @@ class SettingController extends Controller
                 $path = $filename . '_slider_image' . '.' . $file->getClientOriginalExtension();
                 $imgfullPath = $path;
                 $slideImage->image_path = $imgfullPath;
-                $slideImage->save();
+                $slideImage->save()->with('message', 'Slide Image Upload Successfully!');
             }
         } else {
             $newSlideImage = new SlideFilePath();
@@ -128,7 +128,7 @@ class SettingController extends Controller
             $newSlideImage->save();
         }
 
-        return redirect()->route('slide.image.list');
+        return redirect()->route('slide.image.list')->with('message', 'Slide Image Upload Successfully!');
     }
     public function slideImgRemove($id){
         $slideImg = SlideFilePath::find($id);

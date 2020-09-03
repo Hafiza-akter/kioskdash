@@ -19,7 +19,7 @@ class UserController extends Controller
     
     public function index()
     {
-        $is_active = 'user';
+        $is_active = 'userlist';
         $userList = User::orderBy('id', 'DESC')->paginate(5);
         return view('admin/user/list', compact('userList','is_active'));
     }
@@ -27,7 +27,7 @@ class UserController extends Controller
    
     public function create()
     {
-        $is_active = 'user';
+        $is_active = 'useradd';
         $roles = Role::all();
         $locations = Location::select('district_name', 'id')->groupBy('district_name')->get();
         // dd($locations);

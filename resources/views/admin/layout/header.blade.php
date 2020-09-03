@@ -77,8 +77,8 @@
           </li>
           <?php if(Session()->get('is_admin') != 0) {?>
         
-          <li class="nav-item has-treeview {{ ($is_active == 'user') ? 'menu-open' :''  }}">
-            <a href="{{route('userlist')}}" class="nav-link {{ ($is_active == 'user') ? 'active' :''  }}">
+          <li class="nav-item has-treeview {{ ($is_active == 'user' || $is_active == 'userlist' || $is_active == 'useradd') ? 'menu-open' :''  }}">
+            <a href="{{route('userlist')}}" class="nav-link {{ ($is_active == 'user' || $is_active == 'userlist' || $is_active == 'useradd') ? 'active' :''  }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 User
@@ -87,21 +87,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('userlist')}}" class="nav-link">
+                <a href="{{route('userlist')}}" class="nav-link {{ ($is_active == 'userlist') ? 'active' :''  }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>list</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('useradd')}}" class="nav-link">
+                <a href="{{route('useradd')}}" class="nav-link {{ ($is_active == 'useradd') ? 'active' :''  }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>add</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview {{ ($is_active == 'slide') ? 'menu-open' :''  }}">
-            <a href="#" class="nav-link {{ ($is_active == 'slide') ? 'active' :''  }}">
+          <li class="nav-item has-treeview {{ ($is_active == 'slideList' || $is_active == 'floodSummary' || $is_active == 'slideImageList') ? 'menu-open' :''  }}">
+            <a href="#" class="nav-link {{ ($is_active == 'slideList' || $is_active == 'floodSummary' || $is_active == 'slideImageList') ? 'active' :''  }}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
               Slide Configuration
@@ -110,19 +110,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('slidelist')}}" class="nav-link">
+                <a href="{{route('slidelist')}}" class="nav-link {{ ($is_active == 'slideList') ? 'active' :''  }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Duration Setting</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('floodsummary')}}" class="nav-link">
+                <a href="{{route('floodsummary')}}" class="nav-link {{ ($is_active == 'floodSummary') ? 'active' :''  }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Flood Summary</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('slide.image.list')}}" class="nav-link">
+                <a href="{{route('slide.image.list')}}" class="nav-link {{ ($is_active == 'slideImageList') ? 'active' :''  }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Image Upload</p>
                 </a>
