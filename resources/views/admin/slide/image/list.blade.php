@@ -16,7 +16,7 @@
                   <thead>                  
                     <tr>
                       <th style="width: 10px">#</th>
-                      <th>Slide</th>
+                      <th>Slide Name</th>
                       <th>User Level </th>
                       <th>Location</th>
                       <th>Image</th>
