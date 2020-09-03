@@ -1,8 +1,10 @@
 @extends('admin/master')
 @section('title','User List')
-@section('mainmodule',' USER')
+@section('mainmodule','')
 @section('modulename','User')
 @section('pagename','list')
+@section('home','userlist')
+
 @section('content')
 <div class="container-fluid">
       <div class="card">

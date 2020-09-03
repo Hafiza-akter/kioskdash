@@ -105,12 +105,13 @@ class LoginController extends Controller
     }
 
     public function home(){
+        $is_active = 'home';
         if(Session()->get('is_admin') !=2 ){
             $userId = Session()->get('user.id');
             $user = User::where('id',$userId)->first();
-            return view('admin/home',compact('user'));
+            return view('admin/home',compact('user','is_active'));
         }else{
-            return view('admin/home');
+            return view('admin/home',compact('is_active'));
         }
         
     }

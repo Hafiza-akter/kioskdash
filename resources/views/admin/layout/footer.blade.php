@@ -1,16 +1,16 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="#">KIOSK</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>CBTECH</b>
-    </div>
-  </footer>
+  <strong>Copyright &copy; 2020 <a href="#">KIOSK</a>.</strong>
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>CBTECH</b>
+  </div>
+</footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -44,7 +44,7 @@
 <!-- select 2  -->
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
 <script>
-  $(function () {
+  $(function() {
     // Summernote
     $('.customEditor').summernote({
       toolbar: [
@@ -54,11 +54,12 @@
         ['color', ['color']],
         ['para', ['ul', 'ol', 'paragraph']],
         ['height', ['height']]
-]    });
+      ]
+    });
   })
 </script>
 <script>
-  $(function () {
+  $(function() {
     //Initialize Select2 Elements
     $('.select2').select2()
 
@@ -70,28 +71,58 @@
 
 
     var selectVal = $("#role_id option:selected").text();
-    if(selectVal == 'local'){
+    if (selectVal == 'local') {
       $('#locuserfield').show();
-    }
-    else{
+    } else {
       $('#locuserfield').hide();
     }
-    $('#role_id').on('change', function () {
-    var selectVal = $("#role_id option:selected").text();
-    if(selectVal == 'local'){
-      $('#locuserfield').show();
-    }
-    else{
-      $('#locuserfield').hide();
-    }
+    $('#role_id').on('change', function() {
+      var selectVal = $("#role_id option:selected").text();
+      if (selectVal == 'local') {
+        $('#locuserfield').show();
+      } else {
+        $('#locuserfield').hide();
+      }
+    });
+
+
+
   });
 
-  
- 
+  var base_url = getBaseURL();
+
+  function getBaseURL() {
+    var getURL = window.location;
+
+    var _return = getURL.protocol + '//' + getURL.hostname + (location.port.length ? ':' + location.port : '');
+    var tmp_pathname = getURL.pathname.split('/');
+
+    if (getURL.pathname.search(/kiosk/i) > -1) {
+      _return += '/' + tmp_pathname[1] + '/public';
+    }
+    return _return;
+  }
+  $(".btntrash").click(function() {
+    // console.log('hjbh');
+    var id = $(this).attr("id");
+    // console.log(id);
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this  file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location = base_url + '/admin/slide/image/remove/' + id;
+        } else {
+          swal("Your file is safe!", {
+            icon: "success",
+          });
+        }
+      });
   });
 </script>
 
-
-<!-- AdminLTE for demo purposes -->
 <script src="{{asset('js/custom.js')}}"></script>
-

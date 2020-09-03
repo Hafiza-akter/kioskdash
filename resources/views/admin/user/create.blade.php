@@ -1,8 +1,10 @@
 @extends('admin/master')
 @section('title','Add User')
-@section('mainmodule',' USER')
+@section('mainmodule',' ')
 @section('modulename','User')
 @section('pagename','add user')
+@section('useradd','active')
+
 
 @section('content')
 <div class="container-fluid">

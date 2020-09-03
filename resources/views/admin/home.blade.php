@@ -4,6 +4,8 @@
 @section('mainmodule','')
 @section('modulename','home')
 @section('pagename','home')
+@section('home','active')
+
 @section('content')
 <div class="container-fluid">
   <div class="row">
@@ -46,7 +48,7 @@
                     <img src="{{asset('images').'/'.$user->user_slide_image}}" id="imgthumb" style="{{($user->user_slide_image)? '':'display:none'}}; width:200px; height:auto" />
                   <?php } ?>
                   <br> <a class="btn bg-danger btn-xs btn-danger btn-link" id="oldremove" style="{{($user->user_slide_image)? '':'display:none'}}">Remove</a>
-                  <input type="file" name="user_slide_image" id="imginput" style="{{($user->user_slide_image)? 'display:none':''}}" class="form-control">
+                  <input type="file" accept="image/jpeg,image/png" name="user_slide_image" id="imginput" style="{{($user->user_slide_image)? 'display:none':''}}" class="form-control">
                 </div>
               </div>
               <div class="form-group pt-5">

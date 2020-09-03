@@ -53,3 +53,6 @@
 .btn-codeview {
   display: none !important;
 }
+.btntrash{
+  border: none;
+}

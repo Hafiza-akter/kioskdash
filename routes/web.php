@@ -33,8 +33,14 @@ Route::prefix('admin')->group(function(){
             Route::prefix('slide')->group(function(){
                 Route::get('/', 'Admin\SettingController@slideList')->name('slidelist');
                 Route::post('/duration','Admin\SettingController@slideDuration')->name('durationstore');
+
                 Route::get('/flood/summary', 'Admin\SettingController@floodSummary')->name('floodsummary');
                 Route::post('/flood/summary', 'Admin\SettingController@floodSummaryStore')->name('floodsummary.store');
+
+                Route::get('/image/list', 'Admin\SettingController@slideImgList')->name('slide.image.list');
+                Route::get('/image/create', 'Admin\SettingController@slideImgView')->name('slide.image.view');
+                Route::post('/image/store', 'Admin\SettingController@slideImgStore')->name('slide.image.store');
+                Route::get('/image/remove/{id}', 'Admin\SettingController@slideImgRemove')->name('slide.image.remove');
             });
         });
     });

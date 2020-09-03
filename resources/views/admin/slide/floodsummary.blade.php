@@ -1,8 +1,9 @@
 @extends('admin/master')
 @section('title','Flood Summary')
-@section('mainmodule',' Flood Summary')
+@section('mainmodule','')
 @section('modulename','Flood Summary')
 @section('pagename','list')
+@section('floodsummary','active')
 @section('content')
 <div class="container-fluid">
     @if ($errors->any())

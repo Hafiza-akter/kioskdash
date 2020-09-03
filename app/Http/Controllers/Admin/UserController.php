@@ -19,19 +19,21 @@ class UserController extends Controller
     
     public function index()
     {
+        $is_active = 'user';
         $userList = User::orderBy('id', 'DESC')->paginate(5);
-        return view('admin/user/list', compact('userList'));
+        return view('admin/user/list', compact('userList','is_active'));
     }
 
    
     public function create()
     {
+        $is_active = 'user';
         $roles = Role::all();
         $locations = Location::select('district_name', 'id')->groupBy('district_name')->get();
         // dd($locations);
         $ffwcStations = FfwcStation::all();
         $slideDetails = SlideDetail::all();
-        return view('admin/user/create', compact('roles', 'locations', 'ffwcStations', 'slideDetails'));
+        return view('admin/user/create', compact('roles', 'locations', 'ffwcStations', 'slideDetails','is_active'));
     }
 
     public function store(Request $request)
@@ -42,7 +44,6 @@ class UserController extends Controller
             // 'district' => 'required',
             // 'email' => 'required',
             'email' => 'required|unique:user,username',
-
             // 'ffwc_sations' => 'required',
             // 'zoom_level' => 'required',
             'password' => 'required',
@@ -100,6 +101,7 @@ class UserController extends Controller
  
     public function edit($id)
     {
+        $is_active = 'user';
         $roles = Role::all();
         $districts = Location::select('district_name', 'id')->groupBy('district_name')->get();
         $ffwcStations = FfwcStation::all();
@@ -120,7 +122,7 @@ class UserController extends Controller
                 ->Where('upazila_name', $user->getUserLocation->upazila_name)
                 ->get();
         }
-        return view('admin/user/edit', compact('user', 'roles', 'districts', 'upazilas', 'unions', 'ffwcStations', 'userStations', 'slideDetails', 'slide_num'));
+        return view('admin/user/edit', compact('user', 'roles', 'districts', 'upazilas', 'unions', 'ffwcStations', 'userStations', 'slideDetails', 'slide_num','is_active'));
     }
 
    

@@ -3,13 +3,13 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link " data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('home')}}" class="nav-link">Home</a>
+        <a href="{{route('home')}}" class="nav-link ">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link ">Contact</a>
       </li>
     </ul>
 
@@ -23,7 +23,7 @@
       
       </li>
       <li class="nav-item">
-        <a class="nav-link"  href="{{route('logout')}}">
+        <a class="nav-link "  href="{{route('logout')}}">
           Logout
         </a>
       </li>
@@ -68,7 +68,7 @@
           
 
           <li class="nav-item">
-            <a href="{{route('home')}}" class="nav-link">
+            <a href="{{route('home')}}" class="nav-link {{ ($is_active == 'home') ? 'active' :''  }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
               Home
@@ -77,8 +77,8 @@
           </li>
           <?php if(Session()->get('is_admin') != 0) {?>
         
-          <li class="nav-item has-treeview">
-            <a href="{{route('userlist')}}" class="nav-link">
+          <li class="nav-item has-treeview {{ ($is_active == 'user') ? 'menu-open' :''  }}">
+            <a href="{{route('userlist')}}" class="nav-link {{ ($is_active == 'user') ? 'active' :''  }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 User
@@ -100,8 +100,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{ ($is_active == 'slide') ? 'menu-open' :''  }}">
+            <a href="#" class="nav-link {{ ($is_active == 'slide') ? 'active' :''  }}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
               Slide Configuration
@@ -119,6 +119,12 @@
                 <a href="{{route('floodsummary')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Flood Summary</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('slide.image.list')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Image Upload</p>
                 </a>
               </li>
             </ul>
