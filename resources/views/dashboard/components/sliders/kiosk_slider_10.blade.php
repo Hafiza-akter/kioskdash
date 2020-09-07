@@ -16,6 +16,15 @@
                <h1>local user messages</h1>
               </div>
 
+              @if($user['user_slide_image'] == null && $user['user_slide_description'] != null)
+                <div id="carbonads" style="top:28% !important;">
+                    <span>
+                      <span class="" style="color:white;font-size: 1.5rem;line-height: 1.1;">
+                           {!! $user['user_slide_description']!!}
+                      </span>
+                </div>
+              @endif
+
              {{--  <div id="carbonads" style="background: rgba(0,123,255,.25) !important">
                   <span>
                     <span class="carbon-wrap">
@@ -26,8 +35,27 @@
               
               </div>
  --}}
+              @if($user['user_slide_image'] != null && $user['user_slide_description'] == null)
 
-              <div style="position:fixed;top:10%; left:5%; bottom:0; right:0; width:90%; height:80%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
+                <div style="position:fixed;top:10%; left:5%; bottom:0; right:0;  height:80%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
+                    <img src="{{ asset('images/'.$user['user_slide_image']) }}"  height ="100%" style="">
+                </div>
+
+              @endif
+
+              @if($user['user_slide_image'] != null && $user['user_slide_description'] != null)
+
+                <div style="position:fixed;top:10%; left:5%; bottom:0; right:0; width:90%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
+                    <img src="{{ asset('images/'.$user['user_slide_image']) }}" height="62%" style="">
+                    <br>
+                     <p  class="carbon-text" style="background: #272727b5;padding: 10px;text-align: center;border: 4px solid black;vertical-align: -webkit-baseline-middle; z-index:999999;" > 
+                        {!! $user['user_slide_description']!!}
+                      </p>
+                </div>
+                
+              @endif
+
+             {{--  <div style="position:fixed;top:10%; left:5%; bottom:0; right:0; width:90%; height:70%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
               
               @if($user['user_slide_image'])
               <img src="{{ asset('images/'.$user['user_slide_image']) }}" width="100%" style="">
@@ -54,7 +82,7 @@
                 </p>
 
               </div>
-            </div>
+            </div> --}}
 
               </div>
             </div>

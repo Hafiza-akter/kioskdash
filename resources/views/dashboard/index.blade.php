@@ -232,8 +232,8 @@ svg {
   <script src="{{asset('js/leaflet.shpfile.js')}}"></script>
 <script>
 currentTime();
-
-  var mymap = L.map('mapid').setView([23.777176,  90.3563], 7);
+if ( $( "#mapid" ).length ) {
+    var mymap = L.map('mapid').setView([23.777176,  90.3563], 7);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -262,6 +262,11 @@ var shpfile = new L.Shapefile('{{ asset("shapefile/administrative_boundary_of_ba
       }
     });
     shpfile.addTo(mymap);
+}else{
+  var mymap = null;
+}
+
+
 
     
 //     shpfile.once("data:loaded", function() {
@@ -413,7 +418,10 @@ function animateValue(id, start, end, duration,mymap) {
     $(obj).text(current + "%");
       //obj.innerHTML = current;
     if (current == end) {
-      mymap.invalidateSize();
+
+      if(mymap != null ){
+              mymap.invalidateSize();
+      }
       clearInterval(timer);
     }
   }, stepTime);
