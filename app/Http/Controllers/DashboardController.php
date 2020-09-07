@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use  App\Http\Classes\BanglaDate;
 
 use Illuminate\Http\Request;
 use App\Model\Location;
@@ -23,7 +24,17 @@ class DashboardController extends Controller
         $userData = User::where('id', $userID)
                     ->first();
 
-        return view('dashboard.index');
+        // getSlider
+        $sliderData = $userData->getSlider();
+        
+        // date 
+        $bn_date = new BanglaDate( strtotime(date('d-m-Y')) );
+        $date = $bn_date->get_date();
+
+
+        return view('dashboard.index')->with('banglaDate',$date)
+                                    ->with('user',$userData)
+                                    ->with('slider',$sliderData);
     }
 
     public function onLogin(Request $request){

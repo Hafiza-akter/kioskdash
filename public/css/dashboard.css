@@ -43,3 +43,240 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
 .back-to-top{ position: fixed; bottom: 30px; right: 30px; width: 40px; height: 40px; padding: 0px 5px; background: #9d84c1; border-radius: 5px; border: 2px solid #2b1847; cursor: pointer; display: none}
 .back-to-top i{ font-size: 2.2rem; color: #FFF; margin-top: -3px;}
 /*Footer*/
+
+
+
+.loader h1 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 4em;
+  color: rgb(255, 255, 255, 0.1);
+  background-image: url(../img/water__.jpg);
+
+  background-repeat: repeat-x;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+    /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  animation: animate 15s linear infinite;
+
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  width: 60%;
+  font-weight: 900;
+
+}
+
+
+.titles h1 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255, 0.1);
+  background-image: url(../img/water__.jpg);
+
+  background-repeat: repeat-x;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+    /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  animation: animate 15s linear infinite;
+
+  position: absolute;
+  top: 8%;
+  left: 20%;
+  width: 60%;
+  font-weight: 900;
+
+}
+.titles_images h1 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255, 0.1);
+  background-image: url(../img/water__.jpg);
+
+  background-repeat: repeat-x;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+    /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  animation: animate 15s linear infinite;
+
+  position: absolute;
+  top: 1%;
+  left: 20%;
+  width: 60%;
+  font-weight: 900;
+
+}
+
+
+
+@keyframes animate {
+  0% {
+    background-position: left 0px top 20px;
+  }
+  40% {
+    background-position: left 800px top -60px;
+  }
+  80% {
+    background-position: left 1800px top -20px;
+  }
+  100% {
+    background-position: left 2400px top 20px;
+  }
+}
+
+		#carbonads {
+				position: relative;
+				display: block;
+				overflow: hidden;
+				/*max-width: 600px;*/
+				/*margin: 40px auto 0;*/
+				padding: 12px;
+				border-radius: 5px;
+				background: rgba(0,0,0,.3);
+				/*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+				position: absolute;
+				width: 56%;
+				top:35%;
+				left:22%;
+			}
+			#carbonads > span { position: relative; display: block; }
+			#carbonads a { color: inherit; text-decoration: none; }
+			#carbonads a:hover { color: inherit; }
+			.carbon-wrap { display: flex; align-items: center; }
+			.carbon-img { display: block; margin: 0; line-height: 1; }
+			.carbon-img img { display: block; }
+			.carbon-text {
+				position: relative; display: 
+				flex; margin-bottom: 12px; 
+				padding: 8px 1em; 
+				/*max-width: 500px;*/
+				text-align: left; 
+				font-size: 1.6rem; 
+				line-height: 1.2; 
+				align-items: center;
+				color:white;
+
+			}
+			
+			.carbon-poweredby {
+				position: absolute; bottom: 0; left: 146px; color: #cacaca !important; text-transform: uppercase;
+				white-space: nowrap; letter-spacing: .5px; font-weight: 500; font-size: 10px;
+			}
+			@import url('https://fonts.googleapis.com/css?family=Orbitron');
+			#clock {
+				  font-family: 'Orbitron', sans-serif;
+				  
+				}
+/*loaders*/
+.preloader-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  bottom: 0;
+  background: rgba(0,0,0,1);
+  z-index : 2; 
+}
+
+.percentage {
+  z-index: 100;
+  border: 1px solid #ccc;
+  text-align:center;
+  color: #fff;
+  line-height: 30px;
+  font-size : 15px;
+}
+
+.loaders,
+.percentage{
+  height: 30px;
+  max-width: 500px; 
+  border: 2px solid #69AF23;
+  border-radius: 20px;
+  font-weight: 300;
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+  margin : auto; 
+}
+.loaders:after,
+.percentage:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.trackbar {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0.99;
+}
+
+.loadbar {
+  width: 0%;
+  height: 100%;
+  background: repeating-linear-gradient(
+  45deg, 
+    #008737, 
+    #008737 10px, 
+    #69AF23 10px,
+    #69AF23 20px
+  ); /* Stripes Background Gradient */
+  box-shadow: 0px 0px 14px 1px #008737; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: flicker 5s infinite;
+  overflow: hidden;
+}
+
+.glow {
+  width: 0%;
+  height: 0%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 60px 10px #008737;
+  position: absolute;
+  bottom: -5px;
+  animation: animation 5s infinite;
+}
+
+@keyframes animation {
+  10% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.86;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.75;
+  }
+}
