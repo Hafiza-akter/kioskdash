@@ -28,7 +28,7 @@
 
                         
                         <div class="inline-block relative">
-                            <img class="_mt-2" src="{{ asset('images/powered1111.png')}}" height="37">
+                            <img class="_mt-2" src="{{ asset('images/powered11111.png')}}" height="37">
 
                             <a class="a2i-link logo-link" href="https://a2i.pmo.gov.bd" target="_blank">
                             </a>
@@ -62,7 +62,7 @@
         Copyrights © 2018 All Rights Reserved. a2i, Government of Bangladesh
     </div> --}}
 
-     <div class="dev-by" style="position: absolute;right: 5px;bottom: 0px;">
+     <div class="dev-by" style="position: absolute;right: 5px;bottom: 0px;color:white;font-weight: bold;">
                 <div class="developer-corner mt-1">
                     <div class="developer-title">
                     Developed by         
