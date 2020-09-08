@@ -115,12 +115,12 @@
                   <p>Duration Setting</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="{{route('floodsummary')}}" class="nav-link {{ ($is_active == 'floodSummary') ? 'active' :''  }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Flood Summary</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="{{route('slide.image.list')}}" class="nav-link {{ ($is_active == 'slideImageList') ? 'active' :''  }}">
                   <i class="far fa-circle nav-icon"></i>

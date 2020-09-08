@@ -53,7 +53,7 @@ class LoginController extends Controller
             $user = User::where('username',$email)
                         ->first();
             if(!$user || (!Hash::check($password,$user->secret))){
-                return redirect()->back()->with('message','Incorrect username or password!');
+                return redirect()->route('login')->with('message','Incorrect username or password!');
             }
             else{
                 $userType = $user->getUserRole->name;

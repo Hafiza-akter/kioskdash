@@ -109,7 +109,7 @@ class SettingController extends Controller
                 $path = $filename . '_slider_image' . '.' . $file->getClientOriginalExtension();
                 $imgfullPath = $path;
                 $slideImage->image_path = $imgfullPath;
-                $slideImage->save()->with('message', 'Slide Image Upload Successfully!');
+                $slideImage->save();
             }
         } else {
             $newSlideImage = new SlideFilePath();

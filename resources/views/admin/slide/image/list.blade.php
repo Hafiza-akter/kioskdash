@@ -20,6 +20,7 @@
                       <th>User Level </th>
                       <th>Location</th>
                       <th>Image</th>
+                      <th>Description</th>
                       <th style="width: 100px">Action</th>
                     </tr>
                   </thead>
@@ -59,6 +60,8 @@
                       <td>
                         <img src="{{asset('images/slider').'/'.$slide->image_path}}" id="" style="{{($slide->image_path)? '':'display:none'}}; width:100px; height:auto" />
                       </td>
+                      <td>{{ ($slide->description) ?  $slide->description : 'N/A'}}</td>
+
                       <!-- <td> <a onclick="trashbtn();" href="{{route('slide.image.remove',$slide->id)}}"><i class="fas fa-trash"></i></a></td> -->
                       <td><button  class="btntrash btn-link" id="{{$slide->id}}"><i class="fas fa-trash "></i></button></td>
                     </tr>
