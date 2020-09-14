@@ -13,7 +13,7 @@
                <p class="heading_center">Impact based forecasting Map</p>
             </div>
 
-            <div style="width: 80%;height:82vh;border:none;overflow:hidden;z-index:999999;background:white;display: flex;flex-wrap:wrap;align-content: space-between;margin-left:10%;margin-top:10px;" >
+            <div style="width: 80%;height:81vh;border:none;overflow:hidden;z-index:999999;background:white;display: flex;flex-wrap:wrap;align-content: space-between;margin-left:10%;margin-top:10px;" >
 
               <div style="width:70%;">
 

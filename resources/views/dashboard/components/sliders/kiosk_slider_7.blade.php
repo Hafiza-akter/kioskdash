@@ -15,9 +15,9 @@
         <div class="mb-1" style="margin-top:10px;">
 
           @if(isset($data['image']) && $data['image'] != null)
-            <img src="{{ asset('images/slider/'.$data['image']) }}" style="height: 82vh;width:auto;">
+            <img src="{{ asset('images/slider/'.$data['image']) }}" style="height: 81vh;width:auto;">
           @else 
-            <img src="{{ asset('images/2.png') }}" style="height: 82vh;width:auto;">
+            <img src="{{ asset('images/2.png') }}" style="height: 81vh;width:auto;">
           @endif
 
         </div>

@@ -78,11 +78,10 @@
     </div>
 
     <h6 class="text-uppercase mt-2" style=" font-size: 2.5vh;color: white; text-align: left;margin-left:15px;position:absolute;top:2%">
-      <i class="fa fa-calendar-alt mr-1" style="text-shadow: 0px 1px 3px #000;"></i>
-        <span id="forecast_detail_date_location_new" style="text-shadow: 0px 1px 3px #000;">{{$banglaDate[0]}}, {{$banglaDate[1]}} {{$banglaDate[2]}}, {{$banglaDate[3]}}</span>
-      
-      <br>
-
+        <div id="forecast_detail_date_location_new">  
+        <i class="fa fa-calendar-alt mr-1" style="text-shadow: 0px 1px 3px #000;"></i>
+        <span id="" style="text-shadow: 0px 1px 3px #000;">{{$banglaDate[0]}}, {{$banglaDate[1]}} {{$banglaDate[2]}}, {{$banglaDate[3]}}</span>
+        </div>
       <i class="fa fa-clock mr-1 mt-2" style="text-shadow: 0px 1px 3px #000;"></i>
         <span id="forecast_detail_date_location_new_2" style="text-shadow: 0px 1px 3px #000;">
         <span class="clock"></span>
@@ -116,14 +115,6 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-    {{-- <div class="card-footer text-muted" style="height:auto;padding: 0px;margin:0px;">
-  Project Name, Consortium partners, tagline etc.
-  <span style="float:left;">(duration : 7000ms)</span>
-</div>
- --}}
-
-
 </div>
 
 <div class="preloader-wrap" style="z-index: 9898989899;">
@@ -135,12 +126,13 @@
     <div class="glow"></div>
   </div>
 </div>
+
   <script src="{{ asset('js/jquery.min.js')}}"></script>
   <script src="{{ asset('js/popper.min.js')}}"></script>
   <script src="{{ asset('js/bootstrap.min.js')}}"></script>
 
 <script>
- currentTime();
+currentTime();
 
 var mymap = null;
 
@@ -156,25 +148,36 @@ function getColor(d) {
   }
 $.fn.carousel.Constructor.prototype.cycle = function (event) {
     
-    if (!event) {
-        this._isPaused = false;
-      }
+  if (!event) {
+      this._isPaused = false;
+  }
 
-      if (this._interval) {
-        clearInterval(this._interval)
-        this._interval = null;
-      }
+  if (this._interval) {
+    clearInterval(this._interval)
+    this._interval = null;
+  }
 
-      if (this._config.interval && !this._isPaused) {
-          
-        var $ele = $('.carousel-item-next');
-        var newInterval = $ele.data('interval') || this._config.interval;
-        this._interval = setInterval(
-          (document.visibilityState ? this.nextWhenVisible : this.next).bind(this),
-          newInterval
-        );
-      }
+  if (this._config.interval && !this._isPaused) {
+      
+    var $ele = $('.carousel-item-next');
+    // console.log(this);
+    var newInterval = $ele.data('interval') || this._config.interval;
+    this._interval = setInterval(
+      (document.visibilityState ? this.nextWhenVisible : this.next).bind(this),
+      newInterval
+    );
+  }
 };
+
+$('#carouselExampleControls').on('slide.bs.carousel', function onSlide (ev) {
+  var id = ev.relatedTarget.id;
+  if(id === 'kiosk_3_iframe_weather'){
+    $("#forecast_detail_date_location_new").fadeOut();
+  }else{
+    $("#forecast_detail_date_location_new").fadeIn();
+  }
+});
+
 function currentTime() {
   var date = new Date(); /* creating object of Date class */
   var hour = date.getHours();
@@ -196,13 +199,11 @@ function currentTime() {
   min = updateTime(min);
   sec = updateTime(sec);
 
-
   document.getElementsByClassName("clock")[0].innerText = hour + " : " + min + " : " + sec +" " + dd; /* adding time to the div */
     var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
 }
 
 function updateTime(k) {
-
   if (k < 10) {
     k = "0" + k;
   }
@@ -215,16 +216,15 @@ function updateTime(k) {
   var ar=string.split('');
 
   for(var i=0;i<ar.length;i++){
-      let index = engNumber.indexOf(ar[i]);
-      if (index !== -1) {
-          val += bangNumber[index];
-      }
+    let index = engNumber.indexOf(ar[i]);
+    if (index !== -1) {
+      val += bangNumber[index];
+    }
   }
 
   return val;
-
-
 }
+
 var width = 100,
     perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
     EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
@@ -391,7 +391,6 @@ if ( $( "#mapid" ).length ) {
 }, 100);
 
 }
-
 
 </script>
 
