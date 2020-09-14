@@ -10,7 +10,7 @@
           </div>
 
           <div style="height: 6vh;width:auto;margin-top:1.8%">
-              <p class="heading_center">Ward-wise Union Vulnerability Map</p>
+              <p class="heading_center">Ward-wise  Vulnerability Map</p>
           </div>
 
 

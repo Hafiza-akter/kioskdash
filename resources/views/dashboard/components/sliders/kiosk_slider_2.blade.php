@@ -4,7 +4,7 @@
       <div class="card text-center min-vh-100 min-vw-100" style="background: none;">
         <div class="card-body " style="margin:0px;padding:0px;height: 93%">
           <div style="height: 6vh;width:auto;margin-top:1.8%">
-                 <p class="heading_center">Union Map</p>
+                 <p class="heading_center">Location Map</p>
               
           </div>
 
