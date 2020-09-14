@@ -6,20 +6,21 @@
         <div class="card-body " style="padding:0px;margin:0px;height: 93%;">
 
             <div class="d-flex justify-content-center bd-highlight ">
-
               <div class="">
-              <div style="height: 6vh;margin-top:1.8%">
-                 <p class="heading_center">local user messages</p>
-              </div>
 
-              <div class="" style="margin-top:10px;">
+
+              
+                <div style="height: 6vh;margin-top:1.8%">
+                   <p class="heading_center">local user messages</p>
+                </div>
+
               @if($user['user_slide_image'] == null && $user['user_slide_description'] != null)
                 <div id="carbonads" style="top:28% !important;">
                     <span>
                       <span class="" style="color:white;font-size: 1.5rem;line-height: 1.1;">
                            {!! $user['user_slide_description']!!}
                       </span>
-                  </div>
+                </div>
               @endif
 
 
