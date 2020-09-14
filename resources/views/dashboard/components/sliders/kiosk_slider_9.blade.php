@@ -1,4 +1,4 @@
-<div class="carousel-item {{ $key == 0 ? 'active' : ''}} " data-interval="{{ $data['duration'] ? $data['duration'] * 1000 : 6000}}" id="kiosk_04_floodsummary">
+<div class="carousel-item {{ $key == 0 ? 'active' : ''}} " data-interval="{{ $data['duration'] ? $data['duration'] * 1000 : 6000}}" id="kiosk_04_news">
   <div class="d-flex align-items-center justify-content-center">
 
       <div class="card text-center min-vh-100 min-vw-100" style="background: none;">
