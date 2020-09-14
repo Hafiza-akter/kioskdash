@@ -40,8 +40,6 @@ footer .developer img{ height: 17px}
 
 footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padding-left: 0px}
 
-.back-to-top{ position: fixed; bottom: 30px; right: 30px; width: 40px; height: 40px; padding: 0px 5px; background: #9d84c1; border-radius: 5px; border: 2px solid #2b1847; cursor: pointer; display: none}
-.back-to-top i{ font-size: 2.2rem; color: #FFF; margin-top: -3px;}
 /*Footer*/
 
 
@@ -121,7 +119,45 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
 
 }
 
+.heading_center{
 
+  text-transform: uppercase;
+  font-size: 5vh;
+  color: rgb(255, 255, 255, 0.1);
+  background-image: url(../img/water__.jpg);
+
+  background-repeat: repeat-x;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+    /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  animation: animate 15s linear infinite;
+
+  font-weight: 900;
+  text-align: center;
+}
+.heading_center_w{
+
+  text-transform: uppercase;
+  font-size: 6.5vh;
+  color: rgb(255, 255, 255, 0.1);
+  background-image: url(../img/water__.jpg);
+
+  background-repeat: repeat-x;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+    /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  animation: animate 15s linear infinite;
+
+  font-weight: 900;
+  text-align: center;
+
+}
 
 @keyframes animate {
   0% {
@@ -148,10 +184,9 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
 				border-radius: 5px;
 				background: rgba(0,0,0,.3);
 				/*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-				position: absolute;
-				width: 56%;
-				top:35%;
-				left:22%;
+				width: 70%;
+        margin-left:15%;
+        max-height: 70vh;
 			}
 			#carbonads > span { position: relative; display: block; }
 			#carbonads a { color: inherit; text-decoration: none; }
@@ -171,13 +206,24 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
 				color:white;
 
 			}
-			
+			.display-text {
+        position: relative; display: 
+        flex; margin-bottom: 12px; 
+        padding: 8px 1em; 
+        /*max-width: 500px;*/
+        text-align: center; 
+        font-size: 1.6rem; 
+        line-height: 1.2; 
+        align-items: center;
+        color:white;
+
+      }
 			.carbon-poweredby {
 				position: absolute; bottom: 0; left: 146px; color: #cacaca !important; text-transform: uppercase;
 				white-space: nowrap; letter-spacing: .5px; font-weight: 500; font-size: 10px;
 			}
 			@import url('https://fonts.googleapis.com/css?family=Orbitron');
-			#clock {
+			.clock {
 				  font-family: 'Orbitron', sans-serif;
 				  
 				}
@@ -279,4 +325,60 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
   80% {
     opacity: 0.75;
   }
+}
+
+
+.card-header{
+  background-color: #563d7c;
+  color:white;
+  /*box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);*/
+
+}
+.card-footer{
+  background-color: #563d7c;z-index: 1422;
+  border:none !important;
+  /*box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);*/
+
+}
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+/*.sl-title{
+  position: absolute;
+    top: 0;
+    left: 25%;
+    font-size: 31px;
+    background: #343a408a;
+    color: white;
+    font-weight: bolder;
+    width: 50%;
+    z-index: 1245;
+}
+.sl-content{
+position: absolute;
+    right: -1%;
+    width: 20%;
+    top: 10%;
+    z-index: 1234;
+    height: 50vh;
+    background: #563e7b8c;
+    border: 5px solid #563e7b;
+    border-radius: 5px;
+    color: white;
+}*/
+.sl-foo{
+    position: absolute;
+    bottom: 5%;
+    left: 0px;
+    width: 100%;
+    z-index: 1234;
+   background-color: #563d7c;
+    color: white;
+    font-size: 1.4rem;padding: 10px;
+}
+
+
+.card{
+  border: none !important;
 }

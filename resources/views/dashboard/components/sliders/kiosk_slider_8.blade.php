@@ -9,31 +9,33 @@
 
               </div>
               
-            <div class="titles_images">
-               <h1>Impact based forecasting Map</h1>
+            <div style="height: 6vh;width:auto;margin-top:1.8%">
+               <p class="heading_center">Impact based forecasting Map</p>
             </div>
 
-            <div style="position:fixed;top:9%; left:10%; bottom:0; right:0; width:80%; height:84%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;background:white;" >
-              
+            <div style="width: 80%;height:82vh;border:none;overflow:hidden;z-index:999999;background:white;display: flex;flex-wrap:wrap;align-content: space-between;margin-left:10%;margin-top:10px;" >
 
-              @if($data['image'])
+              <div style="width:70%;">
 
-                <img src="{{ asset('images/slider/'.$data['image']) }}"  height="100%" style="float: left;margin-left: 10%;">
+                @if($data['image'])
 
-              @else 
-                <img src="{{ asset('images/1-s2.0-S2212094714000826-gr4.jpg') }}"  height="100%" style="float: left;margin-left: 10%;">
+                <img src="{{ asset('images/slider/'.$data['image']) }}" style="height: 82vh;width:auto;">
 
-              @endif
-              <div style="position: absolute;top: 0%;right:0%;background: #00000040;height: 100%;width:32%; border: 4px solid black;">
-                 <p class="" style="
-    background: #272727b5;
-    height: 100%;
-    font-weight: bold;
-    color: white;
-    line-height: 1.4;
-">
-                <br> 
-<span style="font-size: 2rem;border: 1px solid;padding: 7px;margin-top: 5px;text-align: center;">Forcasting info </span> <br><br>
+                @else 
+
+                 <img src="{{ asset('images/1-s2.0-S2212094714000826-gr4.jpg') }}" style="height: 82vh;width:auto;">
+
+                @endif
+
+
+              </div>
+
+              <div style="width:30%;background: #00000040;border: 4px solid black;">
+
+                  <p class="" style="background: #272727b5;height: 100%;font-weight: bold;color: white;line-height: 1.4;">
+                    <br> 
+
+                  <span style="font-size: 2rem;border: 1px solid;padding: 7px;margin-top: 5px;text-align: center;">Forcasting info </span> <br><br>
                       <span style="font-size: 1.4rem;text-align:left !important;">
                         {!! $data['image_description'] ? $data['image_description'] : ''!!}
                       </span> 

@@ -4,85 +4,46 @@
 
       <div class="card text-center min-vh-100 min-vw-100" style="background: none;" >
         <div class="card-body " style="padding:0px;margin:0px;height: 93%;">
-            <div class="d-flex justify-content-between bd-highlight mb-3">
-              <div class="hero-banner-wrapper">
-              <div class="loader2">
-                
-                @include('dashboard.components.sliders.common.slider_data')
 
+            <div class="d-flex justify-content-center bd-highlight ">
+
+              <div class="">
+              <div style="height: 6vh;margin-top:1.8%">
+                 <p class="heading_center">local user messages</p>
               </div>
 
-              <div class="titles_images">
-               <h1>local user messages</h1>
-              </div>
-
+              <div class="" style="margin-top:10px;">
               @if($user['user_slide_image'] == null && $user['user_slide_description'] != null)
                 <div id="carbonads" style="top:28% !important;">
                     <span>
                       <span class="" style="color:white;font-size: 1.5rem;line-height: 1.1;">
                            {!! $user['user_slide_description']!!}
                       </span>
-                </div>
+                  </div>
               @endif
 
-             {{--  <div id="carbonads" style="background: rgba(0,123,255,.25) !important">
-                  <span>
-                    <span class="carbon-wrap">
-                   <p  class="carbon-text" style="font-weight: bolder;color: #000 !important;" >
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer tooIt has survived not. 
-                      </p>
-                    </span>
-              
-              </div>
- --}}
+
+
               @if($user['user_slide_image'] != null && $user['user_slide_description'] == null)
 
-                <div style="position:fixed;top:10%; left:5%; bottom:0; right:0;  height:80%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
-                    <img src="{{ asset('images/'.$user['user_slide_image']) }}"  height ="100%" style="">
+                <div class="mb-1" >
+                      <img src="{{ asset('images/'.$user['user_slide_image']) }}" style="height: 80vh" >                    
                 </div>
-
               @endif
 
               @if($user['user_slide_image'] != null && $user['user_slide_description'] != null)
+               
 
-                <div style="position:fixed;top:10%; left:5%; bottom:0; right:0; width:90%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
-                    <img src="{{ asset('images/'.$user['user_slide_image']) }}" height="62%" style="">
-                    <br>
-                     <p  class="carbon-text" style="background: #272727b5;padding: 10px;text-align: center;border: 4px solid black;vertical-align: -webkit-baseline-middle; z-index:999999;" > 
-                        {!! $user['user_slide_description']!!}
-                      </p>
+                <div class="mb-1" >
+                      <img src="{{ asset('images/'.$user['user_slide_image']) }}" style="height: 65vh" >                    
                 </div>
-                
+
+                <div style="border:none; margin:0; padding:0; overflow:hidden; z-index:999999;height: 16vh;width:80%;margin-left:10%;border: 4px solid black;" >
+                   <p  class="display-text" style="background: #272727b5;padding: 10px;text-align: center;vertical-align: -webkit-baseline-middle; z-index:999999;" > 
+                      {!! $user['user_slide_description']!!}
+                  </p>
+                </div>                
               @endif
-
-             {{--  <div style="position:fixed;top:10%; left:5%; bottom:0; right:0; width:90%; height:70%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
-              
-              @if($user['user_slide_image'])
-              <img src="{{ asset('images/'.$user['user_slide_image']) }}" width="100%" style="">
-              @else 
-              <img src="{{ asset('images/local.jpg') }}" width="100%" style="">
-              @endif
-
-              <div style="position: absolute;bottom: 0%;background: #00000040;">
-                
-                
-                 <p  class="carbon-text" style="
-    background: #272727b5;
-    padding: 10px;
-    text-align: center;
-    border: 4px solid black;
-    vertical-align: -webkit-baseline-middle;
-" > 
-              @if($user['user_slide_description'])
-                        {!! $user['user_slide_description']!!}
-              @else 
-                        No user messages are set from dashboard.
-              @endif
-
-                </p>
-
-              </div>
-            </div> --}}
 
               </div>
             </div>

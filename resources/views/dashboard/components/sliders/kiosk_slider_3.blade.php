@@ -4,16 +4,14 @@
       <div class="card text-center min-vh-100 min-vw-100" style="background: none;">
         <div class="card-body " style="margin:0px;padding:0px;height: 93%">
            
-            <div class="titles">
-               <h1>Weather Update of Upazila</h1>
+            <div style="height: 6vh;width:auto;margin-top:1.8%">
+               <p class="heading_center">Weather Update of Upazila</p>
             </div>
 
 
-          <iframe src="https://bmd.bdservers.site/kiosk?P_CODE={{$data['pcode']}}" style="position:fixed;pointer-events: none;top:16%; left:15%; bottom:0; right:0; width:70%; height:70%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+          <iframe src="https://bmd.bdservers.site/kiosk?P_CODE={{$data['pcode']}}" style="pointer-events: none;width:85%; height:80vh; border:none; margin-top:10px; padding:0; overflow:hidden; z-index:999999;">
             Your browser doesn't support iframes
           </iframe>
-
-
         </div>
           @include('dashboard.components.sliders.common.slider_footer')
       </div>

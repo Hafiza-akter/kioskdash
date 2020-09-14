@@ -7,111 +7,45 @@
   <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}" >
-  {{-- <link rel="stylesheet" href="{{asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}"> --}}
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
 
-  <style>
-/*  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }*/
-  body{
-    /*color:white !important;*/
-  }
-.card-header{
-  background-color: #563d7c;
-  color:white;
-  /*box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);*/
 
-}
-.card-footer{
-  background-color: #563d7c;z-index: 1422;
-  border:none !important;
-  /*box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);*/
-
-}
-.carousel-control-next,
-.carousel-control-prev {
-    filter: invert(100%);
-}
-.sl-title{
-  position: absolute;
-    top: 0;
-    left: 25%;
-    font-size: 31px;
-    background: #343a408a;
-    color: white;
-    font-weight: bolder;
-    width: 50%;
-    z-index: 1245;
-}
-.sl-content{
-position: absolute;
-    right: -1%;
-    width: 20%;
-    top: 10%;
-    z-index: 1234;
-    height: 50vh;
-    background: #563e7b8c;
-    border: 5px solid #563e7b;
-    border-radius: 5px;
-    color: white;
-}
-.sl-foo{
-    position: absolute;
-    bottom: 5%;
-    left: 0px;
-    width: 100%;
-    z-index: 1234;
-   background-color: #563d7c;
-    color: white;
-    font-size: 1.4rem;padding: 10px;
-}
-video {
-  object-fit: cover;
-  width: 100vw;
-  height: 93vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-
-}
-svg {
-  position: absolute;
-  top: 50%;
-  margin-top: -60px;
-  left: 50%;
-  margin-left: -225px;
-}
-
-.card{
-  border: none !important;
-}
-  </style>
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  <link rel="stylesheet" href="{{ asset('css/leaflet.css')}}"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
 
     <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  <script src="{{asset('js/leaflet.js')}}"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
 
-   <link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_normalize.css')}}" />
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+{{--   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+ --}}
+
+<link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_normalize.css')}}" />
+<link href='{{asset('css/css.css')}}' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_demo.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_style1.css')}}" />
+<style>
+.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } 
+.info h4 { margin: 0 0 5px; color: #777; }
+.legend { text-align: left; line-height: 18px; color: #555; } 
+.legend i { 
+   float: left; margin-right: 8px; opacity: 0.7;
+  border-radius: 60px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.5em 0.6em;
+ }
 
+</style>
 </head>
 
 <body>
 
   <div class="demo-1" style="position: fixed;top: 0;">
-
-    
     <div class="image-preload">
       <img src="img/drop-color.png" alt="">
       <img src="img/drop-alpha.png" alt="">
@@ -124,48 +58,35 @@ svg {
       <img src="img/weather/texture-drizzle-fg.png" />
       <img src="img/weather/texture-drizzle-bg.png" />
     </div>
-
-
     <div class="">
       <header class="codrops-header">
               
       </header>
       <div class="slideshow">
         <canvas width="1" height="1" id="container" style="position:absolute"></canvas>
-        <!-- Heavy Rain -->
-        
-        <!-- Drizzle -->
-        <div class="slide" id="slide-2" data-weather="drizzle">
-          
-         {{--  <div class="slide__element slide__element--date">Saturday, 25<sup>th</sup> of October 2043</div>
-          <div class="slide__element slide__element--temp">18°<small>C</small></div>
-         --}}
+          <div class="slide" id="slide-2" data-weather="drizzle">
         </div>
-        <!-- Sunny -->
-        
-        <!-- Heavy rain -->
-        
-        <!-- Fallout (greenish overlay with slightly greenish/yellowish drops) -->
-      
         <nav class="slideshow__nav" style="display: none;">
-
           <a class="nav-item" href="#"></a>
           <a class="nav-item" href="#slide-2"><i class="icon icon--drizzle"></i><span>10/25</span></a>
           <a class="nav-item" href="#slide-3"><i class="icon icon--sun"></i><span>10/26</span></a>
           <a class="nav-item" href="#slide-5"><i class="icon icon--storm"></i><span>10/28</span></a>
           <a class="nav-item" href="#slide-4"><i class="icon icon--radioactive"></i><span>10/27</span></a>
-        
         </nav>
       </div>
       <p class="nosupport">Sorry, but your browser does not support WebGL!</p>
     </div>
 
-    <h6 class="text-uppercase mt-2" style=" font-size: 22px;color: white; text-align: left;margin-left:15px;position:absolute;top:2.9%">
+    <h6 class="text-uppercase mt-2" style=" font-size: 2.5vh;color: white; text-align: left;margin-left:15px;position:absolute;top:2%">
+      <i class="fa fa-calendar-alt mr-1" style="text-shadow: 0px 1px 3px #000;"></i>
+        <span id="forecast_detail_date_location_new" style="text-shadow: 0px 1px 3px #000;">{{$banglaDate[0]}}, {{$banglaDate[1]}} {{$banglaDate[2]}}, {{$banglaDate[3]}}</span>
+      
+      <br>
 
-    <i class="fa fa-clock mr-1 mt-2" style="text-shadow: 0px 1px 3px #000;"></i>
-    <span id="forecast_detail_date_location_new_2" style="text-shadow: 0px 1px 3px #000;">
-      <span class="clock"></span>
-    </span>
+      <i class="fa fa-clock mr-1 mt-2" style="text-shadow: 0px 1px 3px #000;"></i>
+        <span id="forecast_detail_date_location_new_2" style="text-shadow: 0px 1px 3px #000;">
+        <span class="clock"></span>
+      </span>
 
     </h6>
 
@@ -175,16 +96,7 @@ svg {
     <div id="carouselExampleControls" class="carousel slide"  data-pause="hover"   data-ride="carousel" style="z-index: 19090909">
     {{-- <div id="carouselExampleControls" class="carousel slide"  data-interval="false"  data-ride="carousel"> --}}
         <div class="carousel-inner" role="listbox" >
-          {{-- @include('dashboard.components.sliders.kiosk_01_welcome') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_02_union') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_03_iframe_weather') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_04_floodsummary') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_05_tendaysforcast') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_06_inundation') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_07_vulnerability') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_08_impactbased') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_09_news') --}}
-          {{-- @include('dashboard.components.sliders.kiosk_10_localuse')  --}}
+
           @if($slider && !empty($slider))
 
             @foreach($slider as $key=>$val)
@@ -222,96 +134,26 @@ svg {
     </div>
     <div class="glow"></div>
   </div>
-
 </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{{ asset('js/jquery.min.js')}}"></script>
+  <script src="{{ asset('js/popper.min.js')}}"></script>
+  <script src="{{ asset('js/bootstrap.min.js')}}"></script>
 
-  <script src="{{asset('js/catiline.js')}}"></script>
-  <script src="{{asset('js/leaflet.shpfile.js')}}"></script>
 <script>
-currentTime();
-if ( $( "#mapid" ).length ) {
-    var mymap = L.map('mapid').setView([23.777176,  90.3563], 7);
+ currentTime();
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-      '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-      'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    // id: 'mapbox/streets-v11',
-    id: 'mapbox/light-v10',
-    tileSize: 512,
-    // invalidateSize:false,
-    zoomOffset: -1
-  }).addTo(mymap);
-// map.invalidateSize(false);
+var mymap = null;
 
-
-var shpfile = new L.Shapefile('{{ asset("shapefile/administrative_boundary_of_bangladesh_upazila_level.zip")}}', {
-      onEachFeature: function(feature, layer) {
-        if (feature.properties) {
-          layer.bindPopup(Object.keys(feature.properties).map(function(k) {
-            // console.log(k[NAME_2]);
-            return k + ": " + feature.properties[k];
-          }).join("<br />"), {
-            maxHeight: 200
-          });
-        }
-      }
-    });
-    shpfile.addTo(mymap);
-}else{
-  var mymap = null;
-}
-
-
-
-    
-//     shpfile.once("data:loaded", function() {
-//       console.log("finished loaded shapefile");
-//       mymap.invalidateSize();
-//     });
-    // 
-
-// document.getElementById("submit").onclick = function(e){
-//   var files = document.getElementById('file').files;
-//   if (files.length == 0) {
-//     return; //do nothing if no file given yet
-//   }
-  
-//   var file = files[0];
-  
-//   if (file.name.slice(-3) != 'zip'){ //Demo only tested for .zip. All others, return.
-//     document.getElementById('warning').innerHTML = 'Select .zip file';    
-//     return;
-//   } else {
-//     document.getElementById('warning').innerHTML = ''; //clear warning message.
-//     handleZipFile(file);
-//   }
-// };
-
-//More info: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
-// function handleZipFile(file){
-//   var reader = new FileReader();
-//   reader.onload = function(){
-//     if (reader.readyState != 2 || reader.error){
-//       return;
-//     } else {
-//       convertToLayer(reader.result);
-//     }
-//   }
-//   reader.readAsArrayBuffer(file);
-// }
-
-// function convertToLayer(buffer){
-//   shp(buffer).then(function(geojson){ //More info: https://github.com/calvinmetcalf/shapefile-js
-//     var layer = L.shapefile(geojson).addTo(map);//More info: https://github.com/calvinmetcalf/leaflet.shapefile
-//     console.log(layer);
-//   });
-// }
-
+function getColor(d) {
+    return d > 1000 ? '#800026' :
+        d > 500  ? '#BD0026' :
+        d > 200  ? '#E31A1C' :
+        d > 100  ? '#FC4E2A' :
+        d > 50   ? '#FD8D3C' :
+        d > 20   ? '#FEB24C' :
+        d > 10   ? '#FED976' :
+              '#FFEDA0';
+  }
 $.fn.carousel.Constructor.prototype.cycle = function (event) {
     
     if (!event) {
@@ -418,10 +260,6 @@ function animateValue(id, start, end, duration,mymap) {
     $(obj).text(current + "%");
       //obj.innerHTML = current;
     if (current == end) {
-
-      if(mymap != null ){
-              mymap.invalidateSize();
-      }
       clearInterval(timer);
     }
   }, stepTime);
@@ -431,6 +269,129 @@ function animateValue(id, start, end, duration,mymap) {
 setTimeout(function(){
   $('.preloader-wrap').fadeOut(300);
 }, time);
+
+
+
+if ( $( "#mapid" ).length ) {
+
+  var map = L.map('mapid').setView([23.777176,  90.3563], 12);
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmlwbG9ic2VjMjEiLCJhIjoiY2tmMjRtbDMwMHl4aDJxcGh1MnZsNmh5diJ9.wsx07trJm-r10i69cTap6Q', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+      '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+      'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox/streets-v11',
+    // id: 'mapbox/light-v10',
+    tileSize: 512,
+    // invalidateSize:false,
+    // zoomOffset: -1
+  }).addTo(map);
+
+
+  var legendArray = new Array();
+
+
+  fetch('{{ asset("js/bgd_admbnda_adm3_bbs_s10p.geojson")}}')
+  .then(function (response){
+    return response.json();
+  })
+  .then(function (data){
+
+    L.geoJSON(data,{
+
+      style: function(feature) {
+        if(feature.properties.ADM3_PCODE === $('#pcode').val()){
+          return {color: "#ff0000"};
+        }else{
+          // return {color: "#000000"};
+
+          return {
+              fillColor: '#c4fac0',
+              weight: 2,
+              opacity: 1,
+              color: 'white',
+              dashArray: '3',
+              fillOpacity: 0.7
+          };
+        }
+
+        // switch (feature.properties.ADM3_PCODE) {
+
+        //     case '609159': return {color: "#ff0000"};
+        //     case '303543':   return {color: "#0000ff"};
+
+        // }
+      },
+      onEachFeature: function (feature, layer) {
+
+        // if (feature.properties && feature.properties.popupContent) {
+        //   layer.bindPopup(feature.properties.popupContent);
+        // }
+          // console.log(feature.properties);
+          layer.bindPopup(feature.properties.ADM3_EN);
+          // console.log(feature);
+          if(feature.properties.ADM3_PCODE === $('#pcode').val()){
+            layer.bindTooltip(feature.properties.ADM3_EN, {permanent: true, className: "my-label", offset: [0, 0] });
+            // map.fitBounds(layer.getBounds());
+          
+            var coord = feature.geometry.coordinates[0][0];
+            lalo = L.GeoJSON.coordsToLatLng(coord);
+            // map.setView(lalo, 12);
+            // map.fitBounds(layer.getBounds());
+            map.setView(layer.getBounds().getCenter());
+            legendArray.push(feature.properties);
+
+          }
+
+          if(feature.properties.ADM2_PCODE === $('#pcode').val()){
+            layer.bindTooltip(feature.properties.ADM3_EN, {permanent: true, className: "my-label", offset: [0, 0] });
+            // map.fitBounds(layer.getBounds());
+          
+            var coord = feature.geometry.coordinates[0][0];
+            lalo = L.GeoJSON.coordsToLatLng(coord);
+            // map.setView(lalo, 12);
+            // map.fitBounds(layer.getBounds());
+            map.setView(layer.getBounds().getCenter());
+            legendArray.push(feature.properties);
+
+          }
+
+      }
+
+    }).addTo(map);
+
+      var legend = L.control(legendArray,{position: 'topright'});
+
+      legend.onAdd = function (map) {
+
+      var div = L.DomUtil.create('div', 'info legend'),
+          grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+          labels = [];
+          console.log(legendArray);
+      // loop through our density intervals and generate a label with a colored square for each interval
+          div.innerHTML =
+              '<i style="background:#FEB24C"></i> Union: ' +'<br>'+
+              '<i style="background:#FEB24C"></i> Upazila: <b>' + legendArray[0].ADM3_EN +' </b> <br>'+
+              '<i style="background:#FC4E2A"></i> District: <b>' +legendArray[0].ADM2_EN +'</b> <br>'+
+              '<i style="background:#E31A1C"></i> Area:' +'<br>'+
+              '<i style="background:#800026"></i> Population:'
+             ;
+        return div;
+    };
+    legend.addTo(map);
+
+  })
+
+
+  // L.control.zoom({ position: 'topright' }).addTo(map);
+
+  setInterval(function () {
+   map.invalidateSize();
+}, 100);
+
+}
+
 
 </script>
 

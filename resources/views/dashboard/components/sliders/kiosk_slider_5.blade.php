@@ -10,12 +10,12 @@
 
               </div>
 
-               <div class="titles">
-               <h1>10 days forecast</h1>
+            <div style="height: 6vh;width:auto;margin-top:1.8%">
+               <p class="heading_center">10 days forecast</p>
               </div>
-
-          <iframe src="http://ffwc2.bdservers.site/ffwc_charts/index.php?stid={{ $data['station_id']}}" style="position:fixed;top:16%; left:15%; bottom:0; right:0; width:70%; height:69%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
-            Your browser doesn't support iframes
+              {{-- http://www.ffwc.gov.bd/ffwc_charts/index.php?stid=93 --}}
+          <iframe src="http://www.ffwc.gov.bd/ffwc_charts/index.php?stid=93" style="pointer-events: none;width:80%; height:80vh; border:none; margin-top:10px; padding:0; overflow:hidden; z-index:999999;">
+          Your browser doesn't support iframes
           </iframe>
         </div>
           @include('dashboard.components.sliders.common.slider_footer')

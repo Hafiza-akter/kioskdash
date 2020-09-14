@@ -4,27 +4,20 @@
       <div class="card text-center min-vh-100 min-vw-100" style="background: none;">
         <div class="card-body " style="margin:0px;padding:0px;height: 93%">
             
-               <div class="loader2">
-                  @include('dashboard.components.sliders.common.slider_data')
-
-              </div>
+           <div class="loader2">
+              @include('dashboard.components.sliders.common.slider_data')
+          </div>
               
-            <div class="titles_images">
-               <h1>Inundation Map (developed by RIMES)</h1>
-            </div>
+          <div style="height: 6vh;width:auto;margin-top:1.8%">
+             <p class="heading_center">Inundation Map (developed by RIMES)</p>
+          </div>
 
-          {{--   <div style="position:fixed;top:8%; left:15%; bottom:0; right:0; width:70%; height:84%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
-              <img src="{{ asset('images/1.png') }}" height="100%" style="-webkit-box-shadow: -38px -25px 55px -45px rgba(0,0,0,1);
-      -moz-box-shadow: -38px -25px 55px -45px rgba(0,0,0,1);
-      box-shadow: -38px -25px 55px -45px rgba(0,0,0,1);">
-            </div> --}}
-
-        <div style="position:fixed;top:8%; left:15%; bottom:0; right:0; width:70%; height:84%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" >
+        <div class="mb-1" style="margin-top:10px;">
 
           @if(isset($data['image']) && $data['image'] != null)
-            <img src="{{ asset('images/slider/'.$data['image']) }}" height="100%" style="">
+            <img src="{{ asset('images/slider/'.$data['image']) }}" style="height: 82vh;width:auto;">
           @else 
-            <img src="{{ asset('images/2.png') }}" height="100%" >
+            <img src="{{ asset('images/2.png') }}" style="height: 82vh;width:auto;">
           @endif
 
         </div>

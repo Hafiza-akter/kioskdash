@@ -1,4 +1,3 @@
-
 <div class="carousel-item {{ $key == 0 ? 'active' : ''}}" data-interval="{{ $data['duration'] ? $data['duration'] * 1000 : 6000}}" id="kiosk_01_welcome" >
   <div class="d-flex align-items-center justify-content-center">
 
@@ -12,8 +11,8 @@
 
               </div>
 
-              <div class="loader">
-               <h1>Welcome to our website</h1>
+              <div style="height: 15vh;width:auto;margin-top:10%">
+               <p class="heading_center_w">Welcome to our website</p>
               </div>
 
               <div id="carbonads">
@@ -22,15 +21,11 @@
                     {{-- <a href="" class="carbon-img" target="_blank"> --}}
                       {{-- <img src="" alt=" via Carbon" border="0" style="max-width: 130px;"></a> --}}
                       <p  class="carbon-text" target="_blank" >
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer tooIt has survived not. 
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer tooIt has survived not. industry. Lorem Ipsum has been the industry's standard dummy text ever industry. Lorem Ipsum has been the industry's standard dummy text ever 
                       </p>
                     </span>
               
               </div>
-
-
-
-
               </div>
             </div>
 

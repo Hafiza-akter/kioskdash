@@ -8,30 +8,25 @@
                   @include('dashboard.components.sliders.common.slider_data')
               </div>
               
-            <div class="titles">
-               <h1>News</h1>
+            <div style="height: 6vh;width:auto;margin-top:1.8%">
+               <p class="heading_center">News</p>
             </div>
 
-            <div id="carbonads" style="top:28% !important;">
-                  <span>
-                    <span class="" style="color:white;">
-                    {{-- <a href="" class="carbon-img" target="_blank"> --}}
-                      {{-- <img src="" alt=" via Carbon" border="0" style="max-width: 130px;"></a> --}}
-                      All News list <br> 
-                      All News list <br> 
-                      All News list <br> 
-                      All News list  
-                    </span>
-              
+            <div id="" >
+                <iframe scrolling="no" frameBorder="0" src="https://service.prothomalo.com/commentary/" style=" box-shadow: 0 0 5px 1px lightgrey;height: 70vh;width: 70%;overflow: hidden;margin-top:1%;background: white;opacity: 0.8;">
+                Your browser doesn't support iframes
+                </iframe>
             </div>
-
-
                   
               </div>
-              <div class="sl-foo">
-                 <marquee behavior="scroll" direction="left" scrollamount="5" style="width:100%; vertical-align:middle; cursor:pointer;" onmouseover="javascript:this.setAttribute('scrollamount','0');" onmouseout="javascript:this.setAttribute('scrollamount','5');">
-                    Local news | Local news | Local news | Local news | 
-                  </marquee>              </div>
+              <div class="">
+
+     
+                  <iframe frameBorder="0" scrolling="no"  src="https://service.prothomalo.com/commentary/marquee/" style="height: 8vh;width: 100%;overflow: hidden;">
+                  Your browser doesn't support iframes
+                  </iframe>   
+                  
+              </div>
           @include('dashboard.components.sliders.common.slider_footer')
       </div>
       
