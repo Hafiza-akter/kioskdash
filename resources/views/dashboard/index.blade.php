@@ -304,7 +304,6 @@ if ( $( "#mapid" ).length ) {
           return {color: "#ff0000"};
         }else{
           // return {color: "#000000"};
-
           return {
               fillColor: '#c4fac0',
               weight: 2,
@@ -324,10 +323,6 @@ if ( $( "#mapid" ).length ) {
       },
       onEachFeature: function (feature, layer) {
 
-        // if (feature.properties && feature.properties.popupContent) {
-        //   layer.bindPopup(feature.properties.popupContent);
-        // }
-          // console.log(feature.properties);
           layer.bindPopup(feature.properties.ADM3_EN);
           // console.log(feature);
           if(feature.properties.ADM3_PCODE === $('#pcode').val()){
@@ -382,18 +377,12 @@ if ( $( "#mapid" ).length ) {
 
   })
 
-
-  // L.control.zoom({ position: 'topright' }).addTo(map);
-
   setInterval(function () {
    map.invalidateSize();
 }, 100);
 
 }
-
 </script>
-
-  <script src="{{asset('js/index.min.js')}}"></script>
-
+<script src="{{asset('js/index.min.js')}}"></script>
 </body>
 </html> 
