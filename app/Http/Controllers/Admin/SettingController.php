@@ -74,7 +74,7 @@ class SettingController extends Controller
             'district' => 'required',
             'upazila' => 'required_if:user_loc_level,upazila,union',
             'union' => 'required_if:user_loc_level,union',
-            'slide_image' => 'required',
+            // 'slide_image' => 'required',
 
         ]);
         $slideId = $request->input('slide_id');
@@ -109,14 +109,21 @@ class SettingController extends Controller
                 $path = $filename . '_slider_image' . '.' . $file->getClientOriginalExtension();
                 $imgfullPath = $path;
                 $slideImage->image_path = $imgfullPath;
-                $slideImage->save();
             }
+            else{
+                $slideImage->image_path = null;
+            }
+            $slideImage->description = $description;
+            $slideImage->save();
+
+
         } else {
             $newSlideImage = new SlideFilePath();
             $newSlideImage->slide_detail_id = $slideId;
             $newSlideImage->location_id = $locationId;
             $newSlideImage->loc_level = $locLevel;
             $newSlideImage->description = $description;
+            
             if ($request->hasFile('slide_image')) {
                 $file = $request->file('slide_image');
                 $filename = rand(1, 9000);

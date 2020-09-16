@@ -101,6 +101,7 @@ class UserController extends Controller
  
     public function edit($id)
     {
+        
         $is_active = 'user';
         $roles = Role::all();
         $districts = Location::select('district_name', 'id')->groupBy('district_name')->get();
@@ -129,6 +130,7 @@ class UserController extends Controller
     public function update(Request $request)
     {
         // dd($request);
+        // dd('ghvgh');
 
         $id = $request->input('id');
         $user =  User::where('id', $id)->first();
@@ -147,8 +149,10 @@ class UserController extends Controller
             'union' => 'required_if:user_loc_level,union',
         ]);
         $user->username = $request->input('email');
-        $password = $request->input('password');
-        $user->secret = Hash::make($password);
+        if($request->input('password')){
+            $password = $request->input('password');
+            $user->secret = Hash::make($password);
+        }
         $user->user_loc_level = $request->input('user_loc_level');
         if ($user->user_loc_level == 'district') {
             $user->location_id = $request->input('district');

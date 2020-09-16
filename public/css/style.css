@@ -56,3 +56,6 @@
 .btntrash{
   border: none;
 }
+.note-editing-area{
+  height: 150px;
+}

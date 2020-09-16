@@ -32,7 +32,7 @@
                         <div class="form-group required row">
                             <label class="col-sm-2 col-form-label">Slide Name</label>
                             <div class="col-sm-10">
-                                <select class="form-control select2bs4" name="slide_id">
+                                <select class="form-control select2bs4" required name="slide_id">
                                     <option value="">--select--</option>
                                     @foreach($slideList as $slide)
                                     <option value="{{$slide->id}}">{{$slide->slide_name}}</option>
@@ -43,7 +43,7 @@
                         <div class="form-group required row">
                             <label class="col-sm-2 col-form-label">User level</label>
                             <div class="col-sm-10">
-                                <select class="form-control" id="user_level" name="user_loc_level">
+                                <select class="form-control" id="user_level" required name="user_loc_level">
                                     <option value="">--select--</option>
                                     <option value="district">District</option>
                                     <option value="upazila">Upazila</option>
@@ -82,17 +82,17 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group required row">
+                        <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Image</label>
                             <div class="col-sm-10">
-                                <input type="file" required name="slide_image" accept="image/jpeg,image/png" class="form-control">
+                                <input type="file"  name="slide_image" accept="image/jpeg,image/png" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group  row">
                             <label class="col-sm-2 col-form-label">Description</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="5" name="description"></textarea>
+                                <textarea class="form-control customEditor"  name="description" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                             </div>
                         </div>
 

@@ -20,6 +20,9 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('js/custom.js')}}"></script>
+
 </head>
 <body>
 <div class="container" style="margin-top:5%">
