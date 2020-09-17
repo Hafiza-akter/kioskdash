@@ -297,70 +297,83 @@ if ( $( "#mapid" ).length ) {
 
   var legendArray = new Array();
 
+  fetch('{{ asset("js/station.json")}}')
+    .then(function(res){  
+      return res.json();
+    })
+    .then(function(data){
+      // console.log(data);
+
+      for (var i = 0; i < data.length; i++) {
+        marker = new L.marker([data[i]['lat'], data[i]['lon']])
+          .bindPopup(data[i]['name']).addTo(map);
+          
+          }
+    });
 
   fetch('{{ asset("js/bgd_admbnda_adm3_bbs_s10p.geojson")}}')
-  .then(function (response){
-    return response.json();
-  })
-  .then(function (data){
+    .then(function (response){
+      return response.json();
+    })
+    .then(function (data){
 
-    L.geoJSON(data,{
+      L.geoJSON(data,{
 
-      style: function(feature) {
-        if(feature.properties.ADM3_PCODE === $('#pcode').val()){
-          return {color: "#ff0000"};
-        }else{
-          // return {color: "#000000"};
-          return {
-              fillColor: 'none',
-              weight: 2,
-              opacity: 1,
-              color: 'white',
-              dashArray: '3',
-              fillOpacity: 0.9
-          };
+        style: function(feature) {
+          if(feature.properties.ADM3_PCODE === $('#pcode').val()){
+            return {color: "#ff0000"};
+          }else{
+            // return {color: "#000000"};
+            return {
+                fillColor: 'none',
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.9
+            };
+          }
+
+          // switch (feature.properties.ADM3_PCODE) {
+
+          //     case '609159': return {color: "#ff0000"};
+          //     case '303543':   return {color: "#0000ff"};
+
+          // }
+        },
+        onEachFeature: function (feature, layer) {
+
+            layer.bindPopup(feature.properties.ADM3_EN);
+            // console.log(feature);
+            if(feature.properties.ADM3_PCODE === $('#pcode').val()){
+              // layer.bindTooltip(feature.properties.ADM3_EN, {permanent: true, className: "my-label", offset: [0, 0] });
+              // map.fitBounds(layer.getBounds());
+            
+              var coord = feature.geometry.coordinates[0][0];
+              lalo = L.GeoJSON.coordsToLatLng(coord);
+              // map.setView(lalo, 12);
+              // map.fitBounds(layer.getBounds());
+              map.setView(layer.getBounds().getCenter());
+              legendArray.push(feature.properties);
+
+            }
+
+            if(feature.properties.ADM2_PCODE === $('#pcode').val()){
+              layer.bindTooltip(feature.properties.ADM3_EN, {permanent: true, className: "my-label", offset: [0, 0] });
+              // map.fitBounds(layer.getBounds());
+            
+              var coord = feature.geometry.coordinates[0][0];
+              lalo = L.GeoJSON.coordsToLatLng(coord);
+              // map.setView(lalo, 12);
+              // map.fitBounds(layer.getBounds());
+              map.setView(layer.getBounds().getCenter());
+              legendArray.push(feature.properties);
+
+            }
+
         }
 
-        // switch (feature.properties.ADM3_PCODE) {
-
-        //     case '609159': return {color: "#ff0000"};
-        //     case '303543':   return {color: "#0000ff"};
-
-        // }
-      },
-      onEachFeature: function (feature, layer) {
-
-          layer.bindPopup(feature.properties.ADM3_EN);
-          // console.log(feature);
-          if(feature.properties.ADM3_PCODE === $('#pcode').val()){
-            // layer.bindTooltip(feature.properties.ADM3_EN, {permanent: true, className: "my-label", offset: [0, 0] });
-            // map.fitBounds(layer.getBounds());
-          
-            var coord = feature.geometry.coordinates[0][0];
-            lalo = L.GeoJSON.coordsToLatLng(coord);
-            // map.setView(lalo, 12);
-            // map.fitBounds(layer.getBounds());
-            map.setView(layer.getBounds().getCenter());
-            legendArray.push(feature.properties);
-
-          }
-
-          if(feature.properties.ADM2_PCODE === $('#pcode').val()){
-            layer.bindTooltip(feature.properties.ADM3_EN, {permanent: true, className: "my-label", offset: [0, 0] });
-            // map.fitBounds(layer.getBounds());
-          
-            var coord = feature.geometry.coordinates[0][0];
-            lalo = L.GeoJSON.coordsToLatLng(coord);
-            // map.setView(lalo, 12);
-            // map.fitBounds(layer.getBounds());
-            map.setView(layer.getBounds().getCenter());
-            legendArray.push(feature.properties);
-
-          }
-
-      }
-
-    }).addTo(map);
+      }).addTo(map);
 
       var legend = L.control(legendArray,{position: 'topright'});
 
