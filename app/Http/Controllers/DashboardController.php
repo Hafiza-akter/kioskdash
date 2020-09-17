@@ -5,6 +5,7 @@ use  App\Http\Classes\BanglaDate;
 
 use Illuminate\Http\Request;
 use App\Model\Location;
+use App\Model\FfwcStation;
 use App\Model\User;
 
 use \Firebase\JWT\JWT;
@@ -30,10 +31,12 @@ class DashboardController extends Controller
         // date 
         $bn_date = new BanglaDate( strtotime(date('d-m-Y')) );
         $date = $bn_date->get_date();
-
+        $station = FfwcStation::all()->toJson();
+        
 
         return view('dashboard.index')->with('banglaDate',$date)
                                     ->with('user',$userData)
+                                    ->with('station',$station)
                                     ->with('slider',$sliderData);
     }
 
