@@ -20,7 +20,9 @@ Route::prefix('admin')->group(function(){
     Route::group(['middleware'=>'checkLogin'],function(){
         Route::get('/logout','Admin\LoginController@logout')->name('logout');
         Route::get('/home','Admin\LoginController@home')->name('home');
-        Route::post('/custom/message','Admin\LoginController@message')->name('message');
+
+        Route::get('/custom/message/view','Admin\LoginController@messageView')->name('custom.message.view');
+        Route::post('/custom/message','Admin\LoginController@message')->name('custom.message.store');
 
         Route::group(['middleware'=>'checkAdmin'],function(){
             Route::prefix('user')->group(function(){

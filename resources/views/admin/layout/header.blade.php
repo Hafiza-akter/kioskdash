@@ -75,6 +75,16 @@
               </p>
             </a>
           </li>
+          <?php if(Session()->get('is_admin') == 0) {?>
+          <li class="nav-item">
+            <a href="{{route('custom.message.view')}}" class="nav-link {{ ($is_active == 'custom_message') ? 'active' :''  }}">
+            <i class="nav-icon fas fa-edit"></i>
+              <p>
+              Custom Message
+              </p>
+            </a>
+          </li>
+          <?php } ?>
           <?php if(Session()->get('is_admin') != 0) {?>
         
           <li class="nav-item has-treeview {{ ($is_active == 'user' || $is_active == 'userlist' || $is_active == 'useradd') ? 'menu-open' :''  }}">

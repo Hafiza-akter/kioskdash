@@ -10,6 +10,9 @@ use Session;
 use Carbon\Carbon;
 use App\Model\User;
 
+use \Firebase\JWT\JWT;
+
+
 class LoginController extends Controller
 {
     /**
@@ -67,6 +70,12 @@ class LoginController extends Controller
                
         }
     }
+    public function messageView(){
+        $userId = Session()->get('user.id');
+        $user = User::where('id',$userId)->first();
+        $is_active = 'custom_message';
+        return view('admin/message',compact('is_active','user'));
+    }
 
     public function message(Request $request){
         // $rules = array(
@@ -109,7 +118,18 @@ class LoginController extends Controller
         if(Session()->get('is_admin') !=2 ){
             $userId = Session()->get('user.id');
             $user = User::where('id',$userId)->first();
-            return view('admin/home',compact('user','is_active'));
+
+            // token
+            $secretKey = env('SECRET_KEY');
+                $payload = array(
+                    "user" =>$userId,
+                    "iat" => time(),
+                    "exp" => time()+3600
+                );
+    
+            $jwtToken = JWT::encode($payload, $secretKey);
+            // dd($jwtToken);
+            return view('admin/home',compact('user','is_active','jwtToken'));
         }else{
             return view('admin/home',compact('is_active'));
         }
