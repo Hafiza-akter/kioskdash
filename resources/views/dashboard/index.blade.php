@@ -270,6 +270,13 @@ setTimeout(function(){
 }, time);
 
 
+// window.setInterval("reloadIFrame();", 30000);
+
+function reloadIFrame(){
+  console.log('loading');
+  document.getElementById('10-days-for').src += '';
+
+}
 
 if ( $( "#mapid" ).length ) {
 
@@ -284,7 +291,7 @@ if ( $( "#mapid" ).length ) {
     // id: 'mapbox/light-v10',
     tileSize: 512,
     // invalidateSize:false,
-    // zoomOffset: -1
+    zoomOffset: -1
   }).addTo(map);
 
 
@@ -305,12 +312,12 @@ if ( $( "#mapid" ).length ) {
         }else{
           // return {color: "#000000"};
           return {
-              fillColor: '#c4fac0',
+              fillColor: 'none',
               weight: 2,
               opacity: 1,
               color: 'white',
               dashArray: '3',
-              fillOpacity: 0.7
+              fillOpacity: 0.9
           };
         }
 
@@ -326,7 +333,7 @@ if ( $( "#mapid" ).length ) {
           layer.bindPopup(feature.properties.ADM3_EN);
           // console.log(feature);
           if(feature.properties.ADM3_PCODE === $('#pcode').val()){
-            layer.bindTooltip(feature.properties.ADM3_EN, {permanent: true, className: "my-label", offset: [0, 0] });
+            // layer.bindTooltip(feature.properties.ADM3_EN, {permanent: true, className: "my-label", offset: [0, 0] });
             // map.fitBounds(layer.getBounds());
           
             var coord = feature.geometry.coordinates[0][0];
@@ -379,8 +386,7 @@ if ( $( "#mapid" ).length ) {
 
   setInterval(function () {
    map.invalidateSize();
-}, 100);
-
+  }, 100);
 }
 </script>
 <script src="{{asset('js/index.min.js')}}"></script>

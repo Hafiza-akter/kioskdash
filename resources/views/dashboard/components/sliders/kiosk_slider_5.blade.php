@@ -14,7 +14,7 @@
                <p class="heading_center">10 days forecast</p>
               </div>
               {{-- http://www.ffwc.gov.bd/ffwc_charts/index.php?stid=93 --}}
-          <iframe src="http://ffwc2.bdservers.site/ffwc_charts/index.php?stid={{ $data['station_id']}}" style="pointer-events: none;width:80%; height:80vh; border:none; margin-top:10px; padding:0; overflow:hidden; z-index:999999;">
+          <iframe id="10-days-for" src="http://ffwc2.bdservers.site/ffwc_charts/index.php?stid={{ $data['station_id']}}" style="pointer-events: none;width:80%; height:80vh; border:none; margin-top:10px; padding:0; overflow:hidden; z-index:999999;">
           Your browser doesn't support iframes
           </iframe>
         </div>
