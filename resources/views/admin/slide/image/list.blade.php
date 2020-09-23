@@ -17,8 +17,9 @@
                     <tr>
                       <th style="width: 10px">#</th>
                       <th>Slide Name</th>
-                      <th>User Level </th>
-                      <th>Location</th>
+                      <!-- <th>User Level </th>
+                      <th>Location</th> -->
+                      <th>User Pcode</th>
                       <th>Image</th>
                       <th>Description</th>
                       <th style="width: 100px">Action</th>
@@ -30,7 +31,7 @@
                     <tr>
                       <td>{{ $i++ }}</td>
                       <td>{{ $slide->getSlideDetails->slide_name }}</td>
-                      <td>{{ $slide->loc_level }}</td>
+                      <!-- <td>{{ $slide->loc_level }}</td>
                       <td>
                                 <?php
                                 if(!$slide->getLocation){?>
@@ -56,7 +57,9 @@
                                 }
                                 }                      
                             ?>
-                        </td>
+                        </td> -->
+                        <td>{{ $slide->pcode }}</td>
+
                       <td>
                       <?php if($slide->image_path) { ?>
                         <img src="{{asset('images/slider').'/'.$slide->image_path}}" id="" style="{{($slide->image_path)? '':'display:none'}}; width:100px; height:auto" />
@@ -66,6 +69,7 @@
                         }?>
                       
                       </td>
+
                       <td>
                       <?php if($slide->description) { 
                         echo "$slide->description"; 

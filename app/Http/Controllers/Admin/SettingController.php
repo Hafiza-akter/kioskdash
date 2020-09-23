@@ -85,15 +85,18 @@ class SettingController extends Controller
         // $slideImage->slide_detail_id = $slideId;
         if ($locLevel == 'district') {
             $locationId = $request->input('district');
+            $locationPcode = Location::where('id', $locationId)->pluck('district_pcode')->first();
         } elseif ($locLevel == 'upazila') {
             $locationId = $request->input('upazila');
+            $locationPcode = Location::where('id', $locationId)->pluck('upazila_pcode')->first();
         } elseif ($locLevel == 'union') {
             $locationId = $request->input('union');
+            $locationPcode = Location::where('id', $locationId)->pluck('union_pcode')->first();
         }
         // $slideImage->loc_level = $locLevel;
         // $slideImage->description = $description;
         $slideImage = SlideFilePath::where('slide_detail_id', $slideId)
-            ->where('location_id', $locationId)
+            ->where('pcode', $locationPcode)
             ->first();
         if ($slideImage) {
             $oldImage = $slideImage->image_path;
@@ -104,7 +107,7 @@ class SettingController extends Controller
             }
             if ($request->hasFile('slide_image')) {
                 $file = $request->file('slide_image');
-                $filename = rand(1, 9000);
+                $filename = rand(100, 9999).strtotime("now");
                 $file->move(public_path() . '/images/slider/', $filename . '_slider_image' . '.' . $file->getClientOriginalExtension());
                 $path = $filename . '_slider_image' . '.' . $file->getClientOriginalExtension();
                 $imgfullPath = $path;
@@ -120,13 +123,12 @@ class SettingController extends Controller
         } else {
             $newSlideImage = new SlideFilePath();
             $newSlideImage->slide_detail_id = $slideId;
-            $newSlideImage->location_id = $locationId;
-            $newSlideImage->loc_level = $locLevel;
+            $newSlideImage->pcode = $locationPcode;
             $newSlideImage->description = $description;
             
             if ($request->hasFile('slide_image')) {
                 $file = $request->file('slide_image');
-                $filename = rand(1, 9000);
+                $filename = rand(1, 9000).strtotime("now");
                 $file->move(public_path() . '/images/slider/', $filename . '_slider_image' . '.' . $file->getClientOriginalExtension());
                 $path = $filename . '_slider_image' . '.' . $file->getClientOriginalExtension();
                 $imgfullPath = $path;

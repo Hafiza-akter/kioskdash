@@ -23,3 +23,4 @@ Route::post('/checkemail','AjaxController@checkEmail')->name('checkEmail');
 Route::post('/imgremove','AjaxController@oldImageRemove')->name('imgRemove');
 
 Route::post('/login','DashboardController@onLogin');
+Route::post('/data/upload','APIController@dataUpload');
