@@ -32,24 +32,14 @@ class User extends Model
         	$slider = SlideDetail::where('id',$val)->first();
 
         	$returnArray[$key]['id']=$slider->id;
-        	$returnArray[$key]['location_jd']=$this->location_id;
+        	$returnArray[$key]['location_id']=$this->location_id;
         	$returnArray[$key]['slide_name']=$slider->slide_name;
         	$returnArray[$key]['duration']=$slider->duration;
         	$returnArray[$key]['description']=$slider->description;
-        	$returnArray[$key]['type']=$slider->type;
+            $returnArray[$key]['type']=$slider->type;
+            $returnArray[$key]['user_loc_level']=$this->user_loc_level;
 
-        	$sliderImage = SlideFilePath::where('slide_detail_id',$val)
-        							->where('location_id',$this->location_id)
-									->where('loc_level',$this->user_loc_level)
-        							->first();
 
-        	if($sliderImage){
-        		$returnArray[$key]['image']=$sliderImage->image_path;
-        		$returnArray[$key]['image_description']=$sliderImage->description;
-        	}else{
-        		$returnArray[$key]['image']=null;
-        		$returnArray[$key]['image_description']=null;
-        	}
 
         	$pCode = Location::where('id',$this->location_id)
         							->first();
@@ -64,6 +54,21 @@ class User extends Model
         	if($this->user_loc_level == 'district'){
         		$returnArray[$key]['pcode'] = $pCode->district_pcode;
         	}
+
+            $sliderImage = SlideFilePath::where('slide_detail_id',$val)
+                                    ->where('pcode',$returnArray[$key]['pcode'])
+                                    // ->where('loc_level',$this->user_loc_level)
+                                    ->first();
+
+            if($sliderImage){
+                $returnArray[$key]['image']=$sliderImage->image_path;
+                $returnArray[$key]['image_description']=$sliderImage->description;
+            }else{
+                $returnArray[$key]['image']=null;
+                $returnArray[$key]['image_description']=null;
+            }
+            // $returnArray[$key]['image_pcode'] = isset($sliderImage->pcode) ? $sliderImage->pcode : null;
+
 
         	$sTd = $this->hasOne('App\Model\UserStation')->first();
         	if($sTd){
