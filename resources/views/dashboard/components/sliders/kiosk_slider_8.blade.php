@@ -10,7 +10,8 @@
               </div>
               
             <div style="height: 6vh;width:auto;margin-top:1.8%">
-               <p class="heading_center">Impact based forecasting Map</p>
+               {{-- <p class="heading_center">Impact based forecasting Map</p> --}}
+               <p class="heading_center">প্রভাব ভিত্তিক পূর্বাভাস মানচিত্র</p>
             </div>
 
             <div style="width: 80%;height:81vh;border:none;overflow:hidden;z-index:999999;background:white;display: flex;flex-wrap:wrap;align-content: space-between;margin-left:10%;margin-top:10px;" >
@@ -44,7 +45,7 @@
             </div>
                   
               </div>
-          @include('dashboard.components.sliders.common.slider_footer')
+          {{-- @include('dashboard.components.sliders.common.slider_footer') --}}
       </div>
       
   </div>

@@ -104,6 +104,8 @@
           @else
             <h1>No slider assigned for the user</h1>
           @endif
+
+          @include('dashboard.components.sliders.common.slider_footer')
         </div>
 
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="pointer-events: all">
@@ -185,11 +187,11 @@ function currentTime() {
   var sec = date.getSeconds();
 
 
-  var dd = "AM";
+  var dd = "পূর্বাহ্ণ";
   var h = hour;
   if (h >= 12) {
     h = hour - 12;
-    dd = "PM";
+    dd = "অপরাহ্ন";
   }
   if (h == 0) {
     h = 12;

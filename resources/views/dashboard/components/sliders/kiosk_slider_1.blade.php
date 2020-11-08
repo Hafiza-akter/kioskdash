@@ -12,7 +12,8 @@
               </div>
 
               <div style="height: 15vh;width:auto;margin-top:10%">
-               <p class="heading_center_w">Welcome to our website</p>
+               {{-- <p class="heading_center_w">Welcome to our website</p> --}}
+               <p class="heading_center_w">ডিজিটাল তথ্য বোর্ডে আপনাকে স্বাগতম</p>
               </div>
 
               <div id="carbonads">
@@ -30,7 +31,7 @@
             </div>
 
         </div>
-          @include('dashboard.components.sliders.common.slider_footer')
+          {{-- @include('dashboard.components.sliders.common.slider_footer') --}}
       </div>
 
   </div>

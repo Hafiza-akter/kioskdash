@@ -7,7 +7,7 @@ footer nav.footer-menu ul li{ display: inline-block}
 footer nav.footer-menu ul li a{ color: #fff !important; padding: .2rem .5rem; display: inline-block; font-size: 0.875rem}
 footer nav.footer-menu ul li.divider{ width: 1px; height: 10px; background: #fff}
 
-footer .footer{ padding: 0.8rem 1rem 0.0rem 0px; color: #333}
+footer .footer{ padding: 0.8rem 1rem 0.0rem 0px; color: #fff}
 footer .footer-logo{ padding: 0.5rem 1rem 0.5rem 0; border-right: 1px solid #f8f8f8; display: inline-block; float: left}
 footer .footer-logo img{ _width: 100px}
 

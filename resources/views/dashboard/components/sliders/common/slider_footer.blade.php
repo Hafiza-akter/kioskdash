@@ -1,4 +1,4 @@
-<footer style="height: 7%">
+<footer style="height: 7%;position: fixed;bottom:0;left: 0;width:100%;">
         <div class="top-footer-bar">
         <div class="container">
             <nav class="footer-menu">
@@ -28,18 +28,7 @@
 
                         
                         <div class="inline-block relative">
-                            <img class="_mt-2" src="{{ asset('images/powered11111.png')}}" height="37">
-
-                            <a class="a2i-link logo-link" href="https://a2i.pmo.gov.bd" target="_blank">
-                            </a>
-                            <a class="cabinet-link logo-link" href="https://cabinet.gov.bd/" target="_blank">
-                            </a>
-                            <a class="ictd-link logo-link" href="https://ictd.gov.bd" target="_blank">
-                            </a>
-                            <a class="undp-link logo-link" href="https://www.undp.org" target="_blank">
-                            </a>
-                            <a class="undp-link logo-link" href="https://www.undp.org" target="_blank">
-                            </a>
+                            <p>Powered By RIMES</p>
 
                         </div>
                         <!--<img class="credit-img" src="img/a2i-logo.png"/>-->

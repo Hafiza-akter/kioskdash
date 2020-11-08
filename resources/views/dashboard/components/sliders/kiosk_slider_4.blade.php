@@ -9,7 +9,8 @@
               </div>
               
            <div style="height: 6vh;width:auto;margin-top:1.8%">
-               <p class="heading_center">Flood summery</p>
+               {{-- <p class="heading_center">Flood summery</p> --}}
+               <p class="heading_center">বন্যার প্রতিবেদন</p>
             </div>
 
          
@@ -47,7 +48,7 @@
 
                   
               </div>
-          @include('dashboard.components.sliders.common.slider_footer')
+          {{-- @include('dashboard.components.sliders.common.slider_footer') --}}
       </div>
       
   </div>

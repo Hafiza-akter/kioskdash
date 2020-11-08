@@ -5,7 +5,8 @@
         <div class="card-body " style="margin:0px;padding:0px;height: 93%">
            
             <div style="height: 6vh;width:auto;margin-top:1.8%">
-               <p class="heading_center">Weather Update of Upazila</p>
+               {{-- <p class="heading_center">Weather Update of Upazila</p> --}}
+               <p class="heading_center">উপজেলা আবহাওয়ার পূর্বাভাস</p>
             </div>
 
 
@@ -13,7 +14,7 @@
             Your browser doesn't support iframes
           </iframe>
         </div>
-          @include('dashboard.components.sliders.common.slider_footer')
+          {{-- @include('dashboard.components.sliders.common.slider_footer') --}}
       </div>
       
   </div>
