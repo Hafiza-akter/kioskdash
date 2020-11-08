@@ -32,14 +32,14 @@
 
               <div style="width:30%;background: #00000040;border: 4px solid black;">
 
-                  <p class="" style="background: #272727b5;height: 100%;font-weight: bold;color: white;line-height: 1.4;">
+                  <div class="" style="background: #272727b5;height: 100%;font-weight: bold;color: white;line-height: 1.4;border:1px solid #272727b5">
                     <br> 
 
                   <span style="font-size: 2rem;border: 1px solid;padding: 7px;margin-top: 5px;text-align: center;">Forcasting info </span> <br><br>
-                      <span style="font-size: 1.4rem;text-align:left !important;">
+                      <span style="font-size: 1.4rem;text-align:center; !important;">
                         {!! $data['image_description'] ? $data['image_description'] : ''!!}
                       </span> 
-                      </p>
+                    </div>
               </div>
             </div>
                   
