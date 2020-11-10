@@ -10,7 +10,7 @@
               
           <div style="height: 6vh;width:auto;margin-top:1.8%">
              {{-- <p class="heading_center">Inundation Map (developed by RIMES)</p> --}}
-             <p class="heading_center">জলের গতিপথের মানচিত্র</p>
+             <p class="heading_center">জলাবদ্ধতার মানচিত্র</p>
           </div>
 
         <div class="mb-1" style="margin-top:10px;">

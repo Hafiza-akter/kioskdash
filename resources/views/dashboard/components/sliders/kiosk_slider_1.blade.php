@@ -11,13 +11,12 @@
 
           <div style="height: 15vh;width:auto;margin-top:13%">
               {{-- <p class="heading_center">Ward-wise  Vulnerability Map</p> --}}
-               <p class="heading_center_w">ডিজিটাল তথ্য বোর্ডে আপনাকে স্বাগতম</p>
+               <p class="heading_center_w">ডিজিটাল তথ্যসেবায় স্বাগতম</p>
           </div>
 
 
         <div class="mb-1" style="margin-top:10px;">
-            <img src="{{ asset('images/banner.jpg') }}" style="height: auto;width:auto;">
-        
+            <img src="{{ asset('images/banner.jpg') }}" style="height: auto;width:auto;border:1px solid black;border-radius: 8px;">
         </div>
 
 

@@ -5,7 +5,7 @@
       <div class="card text-center min-vh-100 min-vw-100" style="background: none;" >
         <div class="card-body " style="padding:0px;margin:0px;height: 93%;">
 
-            <div class="d-flex justify-content-center bd-highlight ">
+            <div class=" ">
               <div class="">
 
 

@@ -11,7 +11,7 @@
 
           <div style="height: 6vh;width:auto;margin-top:1.8%">
               {{-- <p class="heading_center">Ward-wise  Vulnerability Map</p> --}}
-              <p class="heading_center">ওয়ার্ড ভিত্তিক দুর্বলতার মানচিত্র</p>
+              <p class="heading_center">ওয়ার্ড ভিত্তিক বিপদাপন্নতার মানচিত্র</p>
           </div>
 
 

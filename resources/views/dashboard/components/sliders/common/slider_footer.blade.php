@@ -61,8 +61,8 @@
                     </div>
                 </div>
       </div>
-
+{{-- 
         <a href="" target="_blank">
             <img src="{{asset('images/riimes.jpg')}}" style="position: absolute;bottom: 0;right: 0;height: 100%;">
-        </a>
+        </a> --}}
 </footer>		
