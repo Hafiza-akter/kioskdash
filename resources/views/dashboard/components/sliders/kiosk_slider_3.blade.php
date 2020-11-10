@@ -9,8 +9,8 @@
                <p class="heading_center">উপজেলা ভিত্তিক আবহাওয়া পূর্বাভাস</p>
             </div>
 
-
-          <iframe src="https://bmd.bdservers.site/kiosk?P_CODE={{$data['pcode']}}" style="pointer-events: none;width:85%; height:80vh; border:none; margin-top:10px; padding:0; overflow:hidden; z-index:999999;">
+            {{-- up_code temporary solution for union --}}
+          <iframe src="https://bmd.bdservers.site/kiosk?P_CODE={{$data['up_pcode']}}" style="pointer-events: none;width:85%; height:80vh; border:none; margin-top:10px; padding:0; overflow:hidden; z-index:999999;">
             Your browser doesn't support iframes
           </iframe>
         </div>

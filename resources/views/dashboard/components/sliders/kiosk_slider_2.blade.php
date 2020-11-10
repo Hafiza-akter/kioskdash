@@ -19,4 +19,5 @@
       </div>
   </div>
 </div>
-<input type="hidden" id="pcode" value="{{$data['pcode']}}">
+{{-- <input type="hidden" id="pcode" value="{{$data['pcode']}}"> aidai thankbe --}} 
+<input type="hidden" id="pcode" value="{{$data['up_pcode']}}">

@@ -54,6 +54,7 @@ class User extends Model
         	if($this->user_loc_level == 'district'){
         		$returnArray[$key]['pcode'] = $pCode->district_pcode;
         	}
+            $returnArray[$key]['up_pcode'] = $pCode->upazila_pcode; // temporary 
 
             $sliderImage = SlideFilePath::where('slide_detail_id',$val)
                                     ->where('pcode',$returnArray[$key]['pcode'])
