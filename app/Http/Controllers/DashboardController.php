@@ -55,7 +55,7 @@ class DashboardController extends Controller
                 $payload = array(
                     "user" =>$user->id,
                     "iat" => time(),
-                    "exp" => time()+3600
+                    "exp" => time()+(3600*8)
                 );
     
                 $jwt = JWT::encode($payload, $secretKey);

@@ -54,14 +54,15 @@
      <div class="dev-by" style="position: absolute;right: 5px;bottom: 0px;color:white;font-weight: bold;">
                 <div class="developer-corner mt-1">
                     <div class="developer-title">
-                    Developed by         
                     </div>
                     <div class="developer">
-                    	<span>company logo</span>
-                        {{-- <a href="" target="_blank">
-                            <img src="{{asset('images/develop1.png')}}">
-                        </a> --}}
+                    	{{-- <span>company logo</span> --}}
+                        
                     </div>
                 </div>
       </div>
+
+        <a href="" target="_blank">
+            <img src="{{asset('images/riimes.jpg')}}" style="position: absolute;bottom: 0;right: 0;height: 100%;">
+        </a>
 </footer>		
