@@ -25,10 +25,10 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_normalize.css')}}" />
-<link href='{{asset('css/css.css')}}' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_demo.css')}}" />
-<link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_style1.css')}}" />
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_normalize.css')}}" /> --}}
+{{-- <link href='{{asset('css/css.css')}}' rel='stylesheet' type='text/css'> --}}
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_demo.css')}}" /> --}}
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/rain_master_style1.css')}}" /> --}}
 <style>
 .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } 
 .info h4 { margin: 0 0 5px; color: #777; }
@@ -45,7 +45,7 @@
 
 <body>
 
-  <div class="demo-1" style="position: fixed;top: 0;">
+  {{-- <div class="demo-1" style="position: fixed;top: 0;">
     <div class="image-preload">
       <img src="img/drop-color.png" alt="">
       <img src="img/drop-alpha.png" alt="">
@@ -77,7 +77,14 @@
       <p class="nosupport">Sorry, but your browser does not support WebGL!</p>
     </div>
 
-    <h6 class="text-uppercase mt-2" style=" font-size: 2.5vh;color: white; text-align: left;margin-left:15px;position:absolute;top:2%">
+   
+
+  </div> --}}
+
+<div class="container-fluid px-0"> <!-- data-interval="true" data-pause="hover"-->
+    <div id="carouselExampleControls" class="carousel slide"  data-pause="hover"   data-ride="carousel" style="z-index: 19090909">
+    {{-- <div id="carouselExampleControls" class="carousel slide"  data-interval="false"  data-ride="carousel"> --}}
+       <h6 class="text-uppercase mt-2" style=" font-size: 2.5vh;color: white; text-align: left;margin-left:15px;position:absolute;top:2%">
         <div id="forecast_detail_date_location_new">  
         <i class="fa fa-calendar-alt mr-1" style="text-shadow: 0px 1px 3px #000;"></i>
         <span id="" style="text-shadow: 0px 1px 3px #000;">{{$banglaDate[0]}}, {{$banglaDate[1]}} {{$banglaDate[2]}}, {{$banglaDate[3]}}</span>
@@ -89,11 +96,6 @@
 
     </h6>
 
-  </div>
-
-<div class="container-fluid px-0"> <!-- data-interval="true" data-pause="hover"-->
-    <div id="carouselExampleControls" class="carousel slide"  data-pause="hover"   data-ride="carousel" style="z-index: 19090909">
-    {{-- <div id="carouselExampleControls" class="carousel slide"  data-interval="false"  data-ride="carousel"> --}}
         <div class="carousel-inner" role="listbox" >
 
           @if($slider && !empty($slider))
@@ -404,6 +406,6 @@ if ( $( "#mapid" ).length ) {
   }, 100);
 }
 </script>
-<script src="{{asset('js/index.min.js')}}"></script>
+{{-- <script src="{{asset('js/index.min.js')}}"></script> --}}
 </body>
 </html> 
