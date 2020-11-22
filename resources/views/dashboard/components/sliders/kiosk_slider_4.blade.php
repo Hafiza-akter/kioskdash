@@ -17,7 +17,7 @@
 
             @if($data['image'] == null && $data['image_description'] != null)
                 <div id="carbonads" style="margin-top:8% !important;">
-                  <span class="" style="color:white;font-size: 1.5rem;line-height: 1.1;">
+                  <span class="" style="color:white !important;font-size: 1.5rem;line-height: 1.1;">
                        {!! $data['image_description']!!}
                   </span>
                 </div>
@@ -39,7 +39,7 @@
                 </div>
 
                 <div style="border:none; margin:0; padding:0; overflow:hidden; z-index:999999;height: 16vh;width:80%;margin-left:10%;border: 4px solid black;" >
-                   <p  class="display-text" style="background: #272727b5;padding: 10px;text-align: center;vertical-align: -webkit-baseline-middle; z-index:999999;" > 
+                   <p  class="display-text" style="background: #272727b5;padding: 10px;text-align: center;vertical-align: -webkit-baseline-middle; z-index:999999;color:#ffffff !important;" > 
                       {!! $data['image_description']!!}
                   </p>
                 </div>                
