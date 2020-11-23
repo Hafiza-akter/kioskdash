@@ -17,7 +17,7 @@
 
             @if($data['image'] == null && $data['image_description'] != null)
                 <div id="carbonads" style="margin-top:8% !important;color:white !important;">
-                  <span class="" style="color:white !important;font-size: 1.5rem;line-height: 1.1;">
+                  <span class="impo" style="color:white !important;font-size: 1.5rem;line-height: 1.1;">
                        {!! $data['image_description']!!}
                   </span>
                 </div>
@@ -53,3 +53,8 @@
       
   </div>
 </div>
+<style type="text/css">
+  .impo p{
+    color:white !important;
+  }
+</style>

@@ -17,14 +17,15 @@
                 </nav>
             </div>
     </div>
-    <div class="inline-block" style="height: 100%;text-align: center;padding: 5px;">
+    <div class="inline-block" style="height: 100%;text-align: center;padding: 10px;">
         <span style="color: white;font-weight: bold;">Powered By: </span> 
-        <img src="{{asset('images/logo_rimes_2.png')}}" style="height: 100%;padding: 4px;">
-        <img src="{{asset('images/Islamic Relief.png')}}" style="height: 100%;padding: 4px;"> 
-        <img src="{{asset('images/European Union.png')}}" style="height: 100%;padding: 4px;">
-        <img src="{{asset('images/Concern.png')}}" style="height: 100%;padding: 4px;">
         <img src="{{asset('images/CARE.png')}}" style="height: 100%;padding: 4px;">
+        <img src="{{asset('images/Islamic Relief.png')}}" style="height: 100%;padding: 4px;"> 
+        <img src="{{asset('images/Concern.png')}}" style="height: 100%;padding: 4px;">
         <img src="{{asset('images/ASOD.png')}}" style="height: 100%;padding: 4px;">
+
+        <img src="{{asset('images/logo_rimes_2.png')}}" style="height: 100%;padding: 4px;">
+        <img src="{{asset('images/European Union.png')}}" style="height: 100%;padding: 4px;">
     </div>
     
 </footer>		
