@@ -57,4 +57,7 @@
   .impo p{
     color:white !important;
   }
+  .impo p span{
+    color:white !important;
+  }
 </style>
