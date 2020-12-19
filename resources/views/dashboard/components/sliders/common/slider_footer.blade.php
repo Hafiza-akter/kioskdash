@@ -17,15 +17,10 @@
                 </nav>
             </div>
     </div>
-    <div class="inline-block" style="height: 100%;text-align: center;padding-top: 5px;padding-bottom: 10px;">
-        <span style="color: white;font-weight: bold;">Powered By: </span> 
-        <img src="{{asset('images/CARE.png')}}" style="height: 100%;">
-        <img src="{{asset('images/Islamic Relief.png')}}" style="height: 100%;"> 
-        <img src="{{asset('images/Concern.png')}}" style="height: 100%;">
-        <img src="{{asset('images/ASOD.png')}}" style="height: 100%;">
-
-        <img src="{{asset('images/logo_rimes_2.png')}}" style="height: 100%;">
-        <img src="{{asset('images/European Union.png')}}" style="height: 100%;">
+    <div class="inline-block" style="height: 100%;text-align: center;padding-top: 8px;padding-bottom: 6px;">
+        <span style="color: white;font-weight: bold;">Powered by: Regional Integrated Multi-Hazard Early Warning System (RIMES)
+ </span> 
+        
     </div>
     
 </footer>		
