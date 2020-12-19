@@ -13,7 +13,7 @@
               <p class="heading_center">
                সাপোর্টিং ফ্লাড ফোরকাস্ট বেইজড অ্যান্ড লার্নিং ইন বাংলাদেশ (সুফল) প্রজেক্ট
               </p>
-               <p class="heading_center_w">ডিজিটাল তথ্যসেবায় স্বাগতম</p>
+               <p class="heading_center">ডিজিটাল তথ্যসেবায় স্বাগতম</p>
           </div>
 
 
@@ -22,9 +22,11 @@
         </div>
 
 
-        <div id="" style="color:white !important;background:rgba(0,0,0,.3);width: 80%;margin:0 auto;">
-            <span class="impo" style="color:white !important;font-size: 1.5rem;line-height: 1.4;">
-                 <p><span style="color: rgb(33, 37, 41);">প্রকল্পটি একো-র অর্থায়নে; কেয়ার বাংলাদেশ, ইসলামিক রিলিফ বাংলাদেশ,কনসার্ন ওয়ার্ল্ডওয়াইড ও এসোড এর যৌথ উদ্যোগে এবং রাইমস-এর কারিগরি সহায়তায় বাস্তবায়িত হচ্ছে </span><br></p>
+        <div id="" style="color:white !important;width: 80%;margin:0 auto;">
+            <span class="impo" style="color:white !important;font-size: 1.6rem;line-height: 1.4;">
+                 <p><span style="color: rgb(33, 37, 41);">
+                 প্রকল্পটি একো-র অর্থায়নে;
+                  কেয়ার বাংলাদেশ, ইসলামিক রিলিফ বাংলাদেশ,কনসার্ন ওয়ার্ল্ডওয়াইড ও এসোড এর যৌথ উদ্যোগে এবং রাইমস-এর কারিগরি সহায়তায় বাস্তবায়িত হচ্ছে </span><br></p>
             </span>
             <div class="inline-block" style="height: 7vh;text-align: center;padding-top: 5px;padding-bottom: 10px;">
                 <img src="{{asset('images/CARE.png')}}" style="height: 100%;">

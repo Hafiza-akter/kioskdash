@@ -18,7 +18,7 @@
             </div>
     </div>
     <div class="inline-block" style="height: 100%;text-align: center;padding-top: 8px;padding-bottom: 6px;">
-        <span style="color: white;font-weight: bold;">Powered by: Regional Integrated Multi-Hazard Early Warning System (RIMES)
+        <span style="color: white;font-weight: bold;font-size: 1.2rem;">Powered by: Regional Integrated Multi-Hazard Early Warning System (RIMES)
  </span> 
         
     </div>
