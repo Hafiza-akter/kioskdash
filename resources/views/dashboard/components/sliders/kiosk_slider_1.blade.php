@@ -8,7 +8,7 @@
               @include('dashboard.components.sliders.common.slider_data')
 
           </div>
-          <div style="height: 15vh;width:auto;margin-top:9%" class="mb-1">
+          <div style="height: 15vh;width:auto;margin-top:8%" class="mb-1">
               {{-- <p class="heading_center">Ward-wise  Vulnerability Map</p> --}}
               <p class="heading_center">
                সাপোর্টিং ফ্লাড ফোরকাস্ট বেইজড অ্যান্ড লার্নিং ইন বাংলাদেশ (সুফল) প্রজেক্ট
@@ -17,8 +17,8 @@
           </div>
 
 
-        <div class="" style="margin:5%;">
-            <img src="{{ asset('images/banner.jpg') }}" style="height: auto;width:auto;border:1px solid black;border-radius: 8px;">
+        <div class="" style="margin:4%;">
+            <img src="{{ asset('images/banner.jpg') }}" style="height: auto;width:300px;border:1px solid black;border-radius: 8px;">
         </div>
 
 
