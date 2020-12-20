@@ -18,7 +18,7 @@
 
 
         <div class="" style="margin:4%;">
-            <img src="{{ asset('images/banner.jpg') }}" style="height: auto;width:300px;border:1px solid black;border-radius: 8px;">
+            <img src="{{ asset('images/banner.jpg') }}" style="height: 100px;width:300px;border:1px solid black;border-radius: 8px;">
         </div>
 
 
