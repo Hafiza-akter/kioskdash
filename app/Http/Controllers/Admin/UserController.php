@@ -20,7 +20,7 @@ class UserController extends Controller
     public function index()
     {
         $is_active = 'userlist';
-        $userList = User::orderBy('id', 'DESC')->paginate(5);
+        $userList = User::orderBy('id', 'DESC')->get();
         return view('admin/user/list', compact('userList','is_active'));
     }
 

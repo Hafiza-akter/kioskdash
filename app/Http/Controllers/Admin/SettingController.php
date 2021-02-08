@@ -54,7 +54,8 @@ class SettingController extends Controller
     }
     public function slideImgList()
     {
-        $slideImageList = SlideFilePath::orderBy('id', 'DESC')->paginate(5);
+        $slideImageList = SlideFilePath::orderBy('id', 'DESC')->get();
+        // dd($slideImageList);
         $is_active = 'slideImageList';
         return view('admin/slide/image/list', compact('is_active','slideImageList'));
     }

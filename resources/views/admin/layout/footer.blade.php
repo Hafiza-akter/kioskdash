@@ -106,7 +106,7 @@
     // console.log('hjbh');
     var id = $(this).attr("id");
     // console.log(id);
-      swal({
+    swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this  file!",
         icon: "warning",
@@ -126,3 +126,32 @@
 </script>
 
 <script src="{{asset('js/custom.js')}}"></script>
+<!-- DataTables -->
+<script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+
+
+<script>
+  $(function() {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+  $(document).ready(function() {
+    setTimeout(function() {
+      $("#flashMessage").slideUp(1000);
+    }, 3000);
+  });
+</script>

@@ -3,6 +3,8 @@
 <head>
   <title>Dashboard</title>
   <meta charset="utf-8">
+  <meta http-equiv="Refresh" content="600"> 
+  <meta http-equiv="Cache-control" content="no-cache">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
@@ -407,5 +409,6 @@ if ( $( "#mapid" ).length ) {
 }
 </script>
 {{-- <script src="{{asset('js/index.min.js')}}"></script> --}}
+
 </body>
 </html> 

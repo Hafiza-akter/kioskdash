@@ -66,7 +66,7 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
   -webkit-background-clip: text;
 
     /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2px;
+  /* -webkit-text-stroke-width: 2px; */
   -webkit-text-stroke-color: black;
   animation: animate 15s linear infinite;
 
@@ -92,7 +92,7 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
   -webkit-background-clip: text;
 
     /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2px;
+  /* -webkit-text-stroke-width: 2px; */
   -webkit-text-stroke-color: black;
   animation: animate 15s linear infinite;
 
@@ -116,7 +116,7 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
   -webkit-background-clip: text;
 
     /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2px;
+  /* -webkit-text-stroke-width: 2px; */
   -webkit-text-stroke-color: black;
   animation: animate 15s linear infinite;
 
@@ -132,15 +132,15 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
 
   text-transform: uppercase;
   font-size: 5vh;
-  color: rgb(255, 255, 255, 0.1);
-  background-image: url(../img/water__.jpg);
+  color: #ffffff;
+  /* background-image: url(../img/water__.jpg); */
 
-  background-repeat: repeat-x;
+  /* background-repeat: repeat-x; */
   background-clip: text;
   -webkit-background-clip: text;
 
     /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2px;
+  /* -webkit-text-stroke-width: 2px; */
   -webkit-text-stroke-color: black;
   animation: animate 15s linear infinite;
 
@@ -159,7 +159,7 @@ footer .copy-right{ font-size: 0.8rem; font-size: 0.7rem; background: none; padd
   -webkit-background-clip: text;
 
     /*-webkit-text-fill-color: white;  Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2px;
+  /* -webkit-text-stroke-width: 2px; */
   -webkit-text-stroke-color: black;
   animation: animate 15s linear infinite;
 
@@ -390,4 +390,9 @@ position: absolute;
 
 .card{
   border: none !important;
+}
+
+.slide_1footer_logo{
+  background: #ffffff;
+  opacity: 0.7;
 }

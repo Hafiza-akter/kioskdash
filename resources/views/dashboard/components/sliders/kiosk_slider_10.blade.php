@@ -10,7 +10,7 @@
 
 
               
-                <div style="height: 6vh;margin-top:1.8%">
+                <div style="height: 6vh;margin-top:1.8%;margin-bottom:10px;">
                    {{-- <p class="heading_center">local user messages</p> --}}
                    <p class="heading_center">স্থানীয় গুরুত্বপূর্ণ বার্তা</p>
                 </div>

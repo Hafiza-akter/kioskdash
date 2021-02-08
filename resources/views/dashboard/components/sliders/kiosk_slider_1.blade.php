@@ -28,7 +28,7 @@
                  প্রকল্পটি একো-র অর্থায়নে;
                   কেয়ার বাংলাদেশ, ইসলামিক রিলিফ বাংলাদেশ,কনসার্ন ওয়ার্ল্ডওয়াইড ও এসোড এর যৌথ উদ্যোগে এবং রাইমস-এর কারিগরি সহায়তায় বাস্তবায়িত হচ্ছে </span><br></p>
             </span>
-            <div class="inline-block" style="height: 7vh;text-align: center;padding-top: 5px;padding-bottom: 10px;">
+            <div class="inline-block slide_1footer_logo" style="height: 7vh;text-align: center;padding-top: 5px;padding-bottom: 10px;">
                 <img src="{{asset('images/CARE.png')}}" style="height: 100%;">
                 <img src="{{asset('images/Islamic Relief.png')}}" style="height: 100%;"> 
                 <img src="{{asset('images/Concern.png')}}" style="height: 100%;">
