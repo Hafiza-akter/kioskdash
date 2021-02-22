@@ -34,6 +34,8 @@ class SettingController extends Controller
             $field_name = 'duration_' . $i;
             $duration_time = $request->input($field_name);
             $slideDetails->duration = $duration_time;
+            $slideDetails->description = $request->input('description_' . $i);
+
             $slideDetails->save();
         }
         return redirect()->route('slidelist')->with('message', 'Slide Duration Time Updated Successfully!');
@@ -81,6 +83,7 @@ class SettingController extends Controller
         $slideId = $request->input('slide_id');
         $locLevel = $request->input('user_loc_level');
         $description = $request->input('description');
+        $you_tube = $request->input('you_tube');
         // $slideImage = new SlideFilePath();
 
         // $slideImage->slide_detail_id = $slideId;
@@ -99,6 +102,7 @@ class SettingController extends Controller
         $slideImage = SlideFilePath::where('slide_detail_id', $slideId)
             ->where('pcode', $locationPcode)
             ->first();
+
         if ($slideImage) {
             $oldImage = $slideImage->image_path;
             // dd($oldImage);
@@ -118,11 +122,14 @@ class SettingController extends Controller
                 $slideImage->image_path = null;
             }
             $slideImage->description = $description;
+            $slideImage->you_tube_url = $you_tube;
+
             $slideImage->save();
 
 
         } else {
             $newSlideImage = new SlideFilePath();
+
             $newSlideImage->slide_detail_id = $slideId;
             $newSlideImage->pcode = $locationPcode;
             $newSlideImage->description = $description;
@@ -135,6 +142,7 @@ class SettingController extends Controller
                 $imgfullPath = $path;
                 $newSlideImage->image_path = $imgfullPath;
             }
+            $newSlideImage->you_tube_url = $you_tube;
             $newSlideImage->save();
         }
 

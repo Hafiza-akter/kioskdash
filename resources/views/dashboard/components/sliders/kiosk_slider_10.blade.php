@@ -12,7 +12,9 @@
               
                 <div style="height: 6vh;margin-top:1.8%;margin-bottom:10px;">
                    {{-- <p class="heading_center">local user messages</p> --}}
-                   <p class="heading_center">স্থানীয় গুরুত্বপূর্ণ বার্তা</p>
+                   {{-- <p class="heading_center">স্থানীয় গুরুত্বপূর্ণ বার্তা</p> --}}
+                                  <p class="heading_center">{{ $data['description']}}</p>
+
                 </div>
 
               @if($user['user_slide_image'] == null && $user['user_slide_description'] != null)

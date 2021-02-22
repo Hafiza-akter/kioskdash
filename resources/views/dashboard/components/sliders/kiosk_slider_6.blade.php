@@ -11,7 +11,9 @@
 
           <div style="height: 6vh;width:auto;margin-top:1.8%">
               {{-- <p class="heading_center">Ward-wise  Vulnerability Map</p> --}}
-              <p class="heading_center">ইউনিয়ন ভিত্তিক বিপদাপন্নতার মানচিত্র</p>
+              {{-- <p class="heading_center">ইউনিয়ন ভিত্তিক বিপদাপন্নতার মানচিত্র</p> --}}
+                             <p class="heading_center">{{ $data['description']}}</p>
+
           </div>
 
 

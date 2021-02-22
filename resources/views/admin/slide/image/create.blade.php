@@ -88,13 +88,19 @@
                                 <input type="file"  name="slide_image" accept="image/jpeg,image/png" class="form-control">
                             </div>
                         </div>
-
+                        <div class="form-group  row">
+                            <label class="col-sm-2 col-form-label">You Tube Url</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  name="you_tube" />
+                        </div>
                         <div class="form-group  row">
                             <label class="col-sm-2 col-form-label">Description</label>
                             <div class="col-sm-10">
                                 <textarea class="form-control customEditor"  name="description" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                             </div>
                         </div>
+
+                         
 
                         <!-- /.card-body -->
                         <div class="card-footer">

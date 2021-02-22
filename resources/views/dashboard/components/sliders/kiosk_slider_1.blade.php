@@ -10,9 +10,11 @@
           </div>
           <div style="height: 15vh;width:auto;margin-top:8%" class="mb-1">
               {{-- <p class="heading_center">Ward-wise  Vulnerability Map</p> --}}
-              <p class="heading_center">
+             {{--  <p class="heading_center">
                সাপোর্টিং ফ্লাড ফোরকাস্ট বেইজড অ্যান্ড লার্নিং ইন বাংলাদেশ (সুফল) প্রজেক্ট
-              </p>
+              </p> --}}
+                             <p class="heading_center">{{ $data['description']}}</p>
+
                <p class="heading_center">ডিজিটাল তথ্যসেবায় স্বাগতম</p>
           </div>
 

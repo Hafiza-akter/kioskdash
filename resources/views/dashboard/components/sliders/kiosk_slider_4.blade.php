@@ -10,7 +10,9 @@
               
            <div style="height: 6vh;width:auto;margin-top:1.8%">
                {{-- <p class="heading_center">Flood summery</p> --}}
-               <p class="heading_center">বন্যা প্রতিবেদন</p>
+               {{-- <p class="heading_center">বন্যা প্রতিবেদন</p> --}}
+                              <p class="heading_center">{{ $data['description']}}</p>
+
             </div>
 
          

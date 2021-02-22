@@ -5,7 +5,7 @@
         <div class="card-body " style="margin:0px;padding:0px;height: 93%">
           <div style="height: 6vh;width:auto;margin-top:1.8%;margin-bottom:10px;">
 {{--                  <p class="heading_center">Location Map</p>
- --}}                 <p class="heading_center">এলাকা মানচিত্র</p>
+ --}}                 <p class="heading_center">{{ $data['description']}}</p>
               
           </div>
 

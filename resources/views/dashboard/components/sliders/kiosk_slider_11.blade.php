@@ -12,7 +12,9 @@
 
             <div style="height: 6vh;width:auto;margin-top:1.8%">
                {{-- <p class="heading_center">5 days forecast</p> --}}
-               <p class="heading_center">৫ দিনের বন্যার পূর্বাভাস</p>
+               {{-- <p class="heading_center">৫ দিনের বন্যার পূর্বাভাস</p> --}}
+                              <p class="heading_center">{{ $data['description']}}</p>
+
               </div>
               {{-- http://www.ffwc.gov.bd/ffwc_charts/index.php?stid=93 --}}
           <iframe id="05-days-for" src="http://www.ffwc.gov.bd/ffwc_charts/index.php?stid={{ $data['station_id']}}" style="pointer-events: none;width:80%; height:80vh; border:none; margin-top:10px; padding:0; overflow:hidden; z-index:999999;">

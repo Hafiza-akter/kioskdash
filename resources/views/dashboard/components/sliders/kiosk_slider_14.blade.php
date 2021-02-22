@@ -12,7 +12,9 @@
 
         <div style="height: 6vh;width:auto;margin-top:1.8%;margin-bottom:10px;">
           {{-- <p class="heading_center">5 days forecast</p> --}}
-          <p class="heading_center">Eclips</p>
+          {{-- <p class="heading_center">Eclips</p> --}}
+                         <p class="heading_center">{{ $data['description']}}</p>
+
         </div>
         {{-- http://www.ffwc.gov.bd/ffwc_charts/index.php?stid=93 --}}
         @if($data['image'] == null && $data['image_description'] != null)

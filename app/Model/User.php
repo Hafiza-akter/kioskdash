@@ -64,13 +64,16 @@ class User extends Model
             if($sliderImage){
                 $returnArray[$key]['image']=$sliderImage->image_path;
                 $returnArray[$key]['image_description']=$sliderImage->description;
+                $returnArray[$key]['you_tube_url']=$sliderImage->you_tube_url;
             }else{
                 $returnArray[$key]['image']=null;
                 $returnArray[$key]['image_description']=null;
+                $returnArray[$key]['you_tube_url']=null;
             }
+
             // $returnArray[$key]['image_pcode'] = isset($sliderImage->pcode) ? $sliderImage->pcode : null;
 
-
+ 
         	$sTd = $this->hasOne('App\Model\UserStation')->first();
         	if($sTd){
         		$returnArray[$key]['station_id']=$sTd->ffwc_stations_id;

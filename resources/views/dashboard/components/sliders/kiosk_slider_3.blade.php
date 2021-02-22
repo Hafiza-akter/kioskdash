@@ -6,7 +6,9 @@
            
             <div style="height: 6vh;width:auto;margin-top:1.8%">
                {{-- <p class="heading_center">Weather Update of Upazila</p> --}}
-               <p class="heading_center">উপজেলা ভিত্তিক আবহাওয়া পূর্বাভাস</p>
+               {{-- <p class="heading_center">উপজেলা ভিত্তিক আবহাওয়া পূর্বাভাস</p> --}}
+                              <p class="heading_center">{{ $data['description']}}</p>
+
             </div>
 
             {{-- up_code temporary solution for union --}}

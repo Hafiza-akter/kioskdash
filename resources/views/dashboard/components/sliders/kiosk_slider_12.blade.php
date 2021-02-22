@@ -12,11 +12,13 @@
 
         <div style="height: 6vh;width:auto;margin-top:1.8%;margin-bottom:10px;">
           {{-- <p class="heading_center">5 days forecast</p> --}}
-          <p class="heading_center">Youtube Video</p>
+          {{-- <p class="heading_center">Youtube Video</p> --}}
+                         <p class="heading_center">{{ $data['description']}}</p>
+
         </div>
         <div class="mb-1" style="margin-top:10px;">
-          @if($data['slide_name'] == 'Youtube Video')
-          <iframe style="width:80%; height:80vh; border:none; margin-top:10px; padding:0;" src="https://www.youtube.com/embed/y2tEPmwWEiI">
+          @if($data['you_tube_url'] != null)
+          <iframe style="width:80%; height:80vh; border:none; margin-top:10px; padding:0;" src="{{ $data['you_tube_url'] }}">
           </iframe>
           @endif
 

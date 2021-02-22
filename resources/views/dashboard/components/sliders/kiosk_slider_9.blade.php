@@ -9,7 +9,8 @@
               </div>
               
             <div style="height: 6vh;width:auto;margin-top:1.8%">
-               <p class="heading_center">News Update</p>
+               {{-- <p class="heading_center">News Update</p> --}}
+               <p class="heading_center">{{ $data['description']}}</p>
             </div>
 
             <div id="" >

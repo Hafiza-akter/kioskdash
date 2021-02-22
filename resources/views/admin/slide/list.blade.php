@@ -22,15 +22,19 @@
                     <tr>
                         <th style="width: 10px">#</th>
                         <th>Slide Name</th>
+                        <th>Title</th>
                         <th>Duration/<sub>seconds</sub></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @php $i=1;$j=1 @endphp
+                    @php $i=1;$j=1; $k=1;@endphp
                     @foreach($slideList as $slide)
                     <tr>
                         <td>{{$j++}}</td>
                         <td>{{$slide->slide_name}}</td>
+                        <td>
+                            <textarea rows="4" cols="40" name="description_{{$k++}}">{{$slide->description}}</textarea>
+                        </td>
                         <td>
                             <input type="number" name="duration_{{$i++}}" value="{{$slide->duration}}" class="duration mb-1">
                             <!-- <div class="progress progress-xs">
