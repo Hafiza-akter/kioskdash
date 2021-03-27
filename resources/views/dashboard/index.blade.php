@@ -139,7 +139,23 @@
 
 <script>
 currentTime();
-
+var cnt = 0;
+$('#carouselExampleControls').on('slide.bs.carousel', function onSlide (ev) {
+  var id = ev.relatedTarget.id;
+  if(id == 'kiosk_12_youtube'){
+    var psrc = $('#youtubeiframe').attr('src');
+    var nSrc= psrc + '?autoplay=1&mute=1';
+    $('#youtubeiframe').attr('src', nSrc);
+    cnt = 1;
+  }else{
+    if(cnt == 1){
+      var psrc = $('#youtubeiframe').attr('src');
+      var nSrc= psrc.slice(0, -18);
+      $('#youtubeiframe').attr('src', nSrc);
+      cnt = 0;
+    }
+  }
+});
 var mymap = null;
 
 function getColor(d) {

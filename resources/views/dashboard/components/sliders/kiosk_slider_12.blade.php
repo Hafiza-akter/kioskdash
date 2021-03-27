@@ -1,4 +1,4 @@
-<div class="carousel-item {{ $key == 0 ? 'active' : ''}}" data-interval="{{ $data['duration'] ? $data['duration'] * 1000 : 6000}}" id="kiosk_11_fivedaysforcast">
+<div class="carousel-item {{ $key == 0 ? 'active' : ''}}" data-interval="{{ $data['duration'] ? $data['duration'] * 1000 : 6000}}" id="kiosk_12_youtube">
 
 
   <div class="d-flex align-items-center justify-content-center">
@@ -18,10 +18,11 @@
         </div>
         <div class="mb-1" style="margin-top:10px;">
           @if($data['you_tube_url'] != null)
-          <iframe style="width:80%; height:80vh; border:none; margin-top:10px; padding:0;" src="{{ $data['you_tube_url'] }}">
+          <iframe id="youtubeiframe" style="width:80%; height:80vh; border:none; margin-top:10px; padding:0;" src="{{ $data['you_tube_url'] }}">
           </iframe>
           @endif
-
+          <!-- <iframe id="youtubeiframe" style="width:80%; height:80vh; border:none; margin-top:10px; padding:0;" src="https://www.youtube.com/embed/E7z9h2oKrRs">
+          </iframe> -->
         </div>
 
 
